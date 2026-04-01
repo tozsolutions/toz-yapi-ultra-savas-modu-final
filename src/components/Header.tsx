@@ -100,7 +100,7 @@ export default function Header() {
               >
                 <button
                   onClick={() => scrollTo(item.id)}
-                  className={`px-3 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-1 ${
+                  className={`px-3 py-2 text-[0.95rem] font-medium rounded-md transition-colors flex items-center gap-1 ${
                     activeSection === item.id
                       ? "text-primary bg-primary/10"
                       : isScrolled
@@ -119,7 +119,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <a
               href="tel:+905367731404"
-              className={`hidden md:flex items-center gap-2 text-sm font-medium ${
+              className={`hidden md:flex items-center gap-2 text-[0.95rem] font-medium ${
                 isScrolled ? "text-primary" : "text-primary-foreground"
               }`}
             >
