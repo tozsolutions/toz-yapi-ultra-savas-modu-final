@@ -46,11 +46,11 @@ export default function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-anasayfa.webp"
+          src="/images/hero-anasayfa.webp?v=2"
           alt="Modern yapı teknolojileri"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover brightness-110 contrast-110 saturate-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-toz-dark-deep/85 via-toz-anthracite/75 to-primary/40" />
+        <div className="absolute inset-0 bg-gradient-to-br from-toz-dark-deep/75 via-toz-anthracite/65 to-primary/30" />
       </div>
 
       {/* Grid Pattern Overlay */}
