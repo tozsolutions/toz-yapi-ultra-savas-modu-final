@@ -19,8 +19,8 @@ export default function BlogSection() {
             <span className="text-primary text-sm font-semibold uppercase tracking-widest">
               Blog & Haberler
             </span>
-            <h2 className="toz-heading text-foreground mt-3">
-              Son <span className="text-gradient-purple">Yazılar</span>
+            <h2 className="toz-heading mt-3">
+              Son Yazılar
             </h2>
             <p className="toz-subheading mx-auto mt-4">
               Yapı teknolojileri, enerji verimliliği ve sürdürülebilirlik alanındaki güncel içeriklerimiz.

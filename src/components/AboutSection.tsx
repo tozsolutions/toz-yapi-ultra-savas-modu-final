@@ -32,8 +32,8 @@ export default function AboutSection() {
             <span className="text-primary text-sm font-semibold uppercase tracking-widest">
               Hakkımızda
             </span>
-            <h2 className="toz-heading text-foreground mt-3">
-              Biz <span className="text-gradient-purple">Kimiz?</span>
+            <h2 className="toz-heading mt-3">
+              Biz Kimiz?
             </h2>
             <p className="toz-subheading mx-auto mt-4">
               2008 yılından bu yana yapı teknolojileri sektöründe kaliteli ürünlerimiz ve

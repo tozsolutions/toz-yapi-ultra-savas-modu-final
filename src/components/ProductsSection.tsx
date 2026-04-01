@@ -30,8 +30,8 @@ export default function ProductsSection() {
             <span className="text-primary text-sm font-semibold uppercase tracking-widest">
               Ürünlerimiz
             </span>
-            <h2 className="toz-heading text-foreground mt-3">
-              Ürün <span className="text-gradient-purple">Gruplarımız</span>
+            <h2 className="toz-heading mt-3">
+              Ürün Gruplarımız
             </h2>
             <p className="toz-subheading mx-auto mt-4">
               Kapsamlı ürün yelpazemizle tüm yapı projelerinde yanınızdayız.

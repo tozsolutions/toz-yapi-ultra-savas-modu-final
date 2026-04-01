@@ -32,8 +32,8 @@ export default function ReferencesSection() {
             <span className="text-primary text-sm font-semibold uppercase tracking-widest">
               Projelerimiz
             </span>
-            <h2 className="toz-heading text-foreground mt-3">
-              <span className="text-gradient-purple">Referanslarımız</span>
+            <h2 className="toz-heading mt-3">
+              Referanslarımız
             </h2>
             <p className="toz-subheading mx-auto mt-4">
               Tecrübemizle hayata geçirdiğimiz projelerden örnekler.

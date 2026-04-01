@@ -57,8 +57,8 @@ export default function StoreSection() {
             <span className="text-primary text-sm font-semibold uppercase tracking-widest">
               Online Mağaza
             </span>
-            <h2 className="toz-heading text-foreground mt-3">
-              Öne Çıkan <span className="text-gradient-purple">Ürünler</span>
+            <h2 className="toz-heading mt-3">
+              Öne Çıkan Ürünler
             </h2>
             <p className="toz-subheading mx-auto mt-4">
               Motor, kumanda ve yedek parça ürünlerimizi online sipariş edin.
