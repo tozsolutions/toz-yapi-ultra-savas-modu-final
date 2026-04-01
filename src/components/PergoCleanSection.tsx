@@ -22,29 +22,63 @@ function useCountdown(target: Date) {
   return time;
 }
 
-// 29 harfli rotating text for "Clean" part
+// Each letter rotates independently - never forms readable words
 function RotatingCleanText() {
-  const cleanChars = "CLEANTEMİZLİKSİSTEMİPERGOKullan";
-  const [display, setDisplay] = useState("Clean");
-  const [offset, setOffset] = useState(0);
+  const numLetters = 5;
+  const allChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789?!@#$&*";
+  
+  return (
+    <span className="inline-flex">
+      {[...Array(numLetters)].map((_, letterIndex) => (
+        <IndependentRotatingLetter
+          key={letterIndex}
+          allChars={allChars}
+          delay={letterIndex * 0.15}
+        />
+      ))}
+    </span>
+  );
+}
+
+function IndependentRotatingLetter({ allChars, delay }: { allChars: string; delay: number }) {
+  const [char, setChar] = useState(allChars[Math.floor(Math.random() * allChars.length)]);
+  const [rotation, setRotation] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setOffset((prev) => (prev + 1) % cleanChars.length);
-      // Show 5 characters at a time
-      const chars = [];
-      for (let i = 0; i < 5; i++) {
-        chars.push(cleanChars[(offset + i) % cleanChars.length]);
-      }
-      setDisplay(chars.join(""));
-    }, 300);
-    return () => clearInterval(interval);
-  }, [offset]);
+    const charInterval = setInterval(() => {
+      setChar(allChars[Math.floor(Math.random() * allChars.length)]);
+    }, 200);
+
+    const rotationInterval = setInterval(() => {
+      setRotation((prev) => (prev + 180) % 360);
+    }, 400);
+
+    return () => {
+      clearInterval(charInterval);
+      clearInterval(rotationInterval);
+    };
+  }, [allChars]);
 
   return (
-    <span className="inline-block min-w-[140px] text-center bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-      {display}
-    </span>
+    <motion.span
+      className="inline-block w-8 md:w-10 text-center"
+      animate={{
+        rotateY: rotation,
+        scale: [1, 1.1, 1],
+      }}
+      transition={{
+        rotateY: { duration: 0.4, ease: "easeInOut" },
+        scale: { duration: 0.3, repeat: Infinity, repeatType: "reverse", delay },
+      }}
+      style={{
+        background: "linear-gradient(135deg, #22d3ee, #a78bfa, #f472b6)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        backgroundClip: "text",
+      }}
+    >
+      {char}
+    </motion.span>
   );
 }
 
