@@ -54,7 +54,7 @@ export default function StoreSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-[0.95rem] md:text-[1.02rem] text-primary font-semibold uppercase tracking-widest">
+            <span className="text-[1rem] md:text-[1.08rem] text-primary font-semibold uppercase tracking-widest">
               Online Mağaza
             </span>
             <h2 className="toz-heading mt-3">

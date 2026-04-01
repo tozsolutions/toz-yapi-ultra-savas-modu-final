@@ -41,10 +41,10 @@ export default function PartnersSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-primary text-sm font-semibold uppercase tracking-widest">
+            <span className="text-[1rem] md:text-[1.08rem] text-primary font-semibold uppercase tracking-widest">
               İş Ortaklarımız
             </span>
-            <h2 className="toz-heading text-foreground mt-3">
+            <h2 className="toz-heading mt-3">
               Güvenilir <span className="text-gradient-purple">Çözüm Ortakları</span>
             </h2>
           </motion.div>
