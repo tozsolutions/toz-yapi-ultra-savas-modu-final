@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "references": "References",
+    "store": "Store",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "20 Years of Experience in Construction Technologies",
+    "subtitle": "Leading solutions in shutters, roller shutters, pergolas and automatic door systems",
+    "cta": "View Products"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Since 2008, we have been providing reliable solutions in the construction technologies sector.",
+    "experience": "20+ Years Experience",
+    "projects": "500+ Completed Projects",
+    "customers": "1000+ Happy Customers"
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "We offer solutions for all your needs with our wide product range",
+    "shutter": "Shutter Systems",
+    "roller": "Roller Shutters",
+    "pergola": "Pergola Systems",
+    "door": "Automatic Doors",
+    "awning": "Awning Systems",
+    "glass": "Glass Systems",
+    "pool": "Pool Enclosures",
+    "sunscreen": "Sun Screens"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Reach us for your questions",
+    "name": "Your Name",
+    "email": "Your Email",
+    "phone": "Your Phone",
+    "message": "Your Message",
+    "send": "Send",
+    "success": "Your message has been sent successfully!",
+    "error": "Message could not be sent. Please try again."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "readMore": "Read More",
+    "viewAll": "View All"
+  }
+}

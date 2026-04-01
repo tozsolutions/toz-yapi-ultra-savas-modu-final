@@ -1,198 +1,154 @@
-import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { useToast } from '@/hooks/use-toast';
+import { useAnalytics } from '@/contexts/AnalyticsContext';
+
+const contactFormSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters'),
+  email: z.string().email('Invalid email address'),
+  phone: z.string().optional(),
+  message: z.string().min(10, 'Message must be at least 10 characters'),
+  subject: z.string().optional(),
+});
+
+type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export default function ContactSection() {
-  const [formState, setFormState] = useState({ name: "", email: "", phone: "", message: "" });
+  const { t } = useTranslation();
+  const { toast } = useToast();
+  const { trackEvent } = useAnalytics();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleWhatsApp = () => {
-    const msg = encodeURIComponent(
-      `Merhaba, ${formState.name || "isim belirtilmedi"}. Bilgi almak istiyorum. ${formState.message || ""}`
-    );
-    window.open(`https://wa.me/905367731404?text=${msg}`, "_blank");
-  };
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+      subject: '',
+    },
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    handleWhatsApp();
-  };
+  async function onSubmit(data: ContactFormValues) {
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        toast({
+          title: t('contact.success'),
+          description: 'We will get back to you soon.',
+        });
+        trackEvent('Contact Form', 'Submit', 'Contact form submitted');
+        form.reset();
+      } else {
+        throw new Error(result.error || 'Failed to submit');
+      }
+    } catch (error) {
+      toast({
+        title: t('contact.error'),
+        description: error instanceof Error ? error.message : 'Please try again later',
+        variant: 'destructive',
+      });
+      trackEvent('Contact Form', 'Error', 'Contact form submission failed');
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   return (
-    <section id="contact" className="relative toz-section">
-      <div className="relative toz-container pt-8">
-        <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <span className="text-primary text-sm font-semibold uppercase tracking-widest">
-              İletişim
-            </span>
-            <h2 className="toz-heading text-foreground mt-3">
-              Bizimle <span className="text-gradient-purple">İletişime Geçin</span>
-            </h2>
-          </motion.div>
+    <section id="contact" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('contact.title')}</h2>
+          <p className="text-gray-600">{t('contact.subtitle')}</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            <div>
-              <h3 className="text-2xl font-bold font-display text-foreground mb-6">
-                İletişim Bilgileri
-              </h3>
-              <div className="space-y-5">
-                {[
-                  {
-                    icon: <MapPin className="w-5 h-5" />,
-                    title: "Adres",
-                    text: "Timko İş Merkezi\nÇamlıca Mahallesi Anadolu Bulvarı\nĞ Blok, İdil Sokak V8, Kat 1\n06200 Yenimahalle/Ankara",
-                  },
-                  {
-                    icon: <Phone className="w-5 h-5" />,
-                    title: "Telefon",
-                    text: "+90 536 773 14 04",
-                    href: "tel:+905367731404",
-                  },
-                  {
-                    icon: <Mail className="w-5 h-5" />,
-                    title: "E-posta",
-                    text: "merhaba@tozyapi.com.tr",
-                    href: "mailto:merhaba@tozyapi.com.tr",
-                  },
-                  {
-                    icon: <Clock className="w-5 h-5" />,
-                    title: "Çalışma Saatleri",
-                    text: "Pzt-Cuma: 10:00 - 17:00\nC.tesi-Pazar: Kapalı",
-                  },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground text-sm">{item.title}</h4>
-                      {item.href ? (
-                        <a
-                          href={item.href}
-                          className="text-muted-foreground text-sm hover:text-primary transition-colors whitespace-pre-line"
-                        >
-                          {item.text}
-                        </a>
-                      ) : (
-                        <p className="text-muted-foreground text-sm whitespace-pre-line">{item.text}</p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Google Maps - Timko İş Merkezi, Yenimahalle, Ankara */}
-            <a
-              href="https://www.google.com/maps/search/Timko+%C4%B0%C5%9F+Merkezi+%C3%87aml%C4%B1ca+Mahallesi+Anadolu+Bulvar%C4%B1+Yenimahalle+Ankara"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block rounded-2xl overflow-hidden border border-border h-52 hover:ring-2 hover:ring-primary/30 transition-all"
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.8!2d32.7385!3d39.9334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34f0fb42e3c71%3A0x2c9b7d5e3e8b6a0!2sTimko%20%C4%B0%C5%9F%20Merkezi!5e0!3m2!1str!2str!4v1711234567890"
-                width="100%"
-                height="100%"
-                style={{ border: 0, pointerEvents: "none" }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Toz Yapı Konum - Timko İş Merkezi, Yenimahalle/Ankara"
+        <div className="max-w-2xl mx-auto">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('contact.name')}</FormLabel>
+                    <FormControl>
+                      <Input placeholder={t('contact.name')} {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
-            </a>
-            <p className="text-xs text-muted-foreground text-center -mt-4">
-              Haritaya tıklayarak Google Maps'te açabilirsiniz
-            </p>
-          </motion.div>
 
-          {/* Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="bg-card border border-border rounded-2xl p-8 shadow-sm">
-              <h3 className="text-xl font-bold font-display text-foreground mb-6">
-                Hızlı İletişim Formu
-              </h3>
-              <form className="space-y-4" onSubmit={handleSubmit}>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-sm font-medium text-foreground mb-1.5 block">
-                      Adınız Soyadınız
-                    </label>
-                    <Input
-                      placeholder="Ad Soyad"
-                      value={formState.name}
-                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                    />
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-foreground mb-1.5 block">
-                      Telefon
-                    </label>
-                    <Input
-                      placeholder="+90 5XX XXX XX XX"
-                      value={formState.phone}
-                      onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-1.5 block">
-                    E-posta
-                  </label>
-                  <Input
-                    type="email"
-                    placeholder="ornek@email.com"
-                    value={formState.email}
-                    onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-foreground mb-1.5 block">
-                    Mesajınız
-                  </label>
-                  <Textarea
-                    placeholder="Projeniz hakkında bilgi verin..."
-                    rows={4}
-                    value={formState.message}
-                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  />
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                  <Button type="submit" className="flex-1 bg-primary text-primary-foreground hover:bg-toz-purple-light">
-                    <Send className="w-4 h-4 mr-2" />
-                    WhatsApp ile Gönder
-                  </Button>
-                  <a href="tel:+905367731404" className="flex-1">
-                    <Button
-                      type="button"
-                      variant="outline"
-                      className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                    >
-                      Hemen Arayın
-                    </Button>
-                  </a>
-                </div>
-              </form>
-            </div>
-          </motion.div>
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('contact.email')}</FormLabel>
+                    <FormControl>
+                      <Input type="email" placeholder={t('contact.email')} {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('contact.phone')}</FormLabel>
+                    <FormControl>
+                      <Input placeholder={t('contact.phone')} {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('contact.message')}</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder={t('contact.message')}
+                        className="min-h-[150px]"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <Button type="submit" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : t('contact.send')}
+              </Button>
+            </form>
+          </Form>
         </div>
       </div>
     </section>

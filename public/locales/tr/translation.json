@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "products": "Ürünler",
+    "references": "Referanslar",
+    "store": "Mağaza",
+    "blog": "Blog",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "title": "Yapı Teknolojilerinde 20 Yıllık Deneyim",
+    "subtitle": "Panjur, kepenk, pergola ve otomatik kapı sistemlerinde lider çözümler",
+    "cta": "Ürünleri İncele"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "description": "2008'den beri yapı teknolojileri sektöründe güvenilir çözümler sunuyoruz.",
+    "experience": "20+ Yıllık Deneyim",
+    "projects": "500+ Tamamlanan Proje",
+    "customers": "1000+ Mutlu Müşteri"
+  },
+  "products": {
+    "title": "Ürün Gruplarımız",
+    "subtitle": "Geniş ürün yelpazemizle tüm ihtiyaçlarınıza çözüm sunuyoruz",
+    "shutter": "Panjur Sistemleri",
+    "roller": "Kepenk Sistemleri",
+    "pergola": "Pergola Sistemleri",
+    "door": "Otomatik Kapı",
+    "awning": "Tente Sistemleri",
+    "glass": "Cam Sistemleri",
+    "pool": "Havuz Kapama",
+    "sunscreen": "Güneş Kırıcılar"
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Sorularınız için bize ulaşın",
+    "name": "Adınız Soyadınız",
+    "email": "E-posta Adresiniz",
+    "phone": "Telefon Numaranız",
+    "message": "Mesajınız",
+    "send": "Gönder",
+    "success": "Mesajınız başarıyla gönderildi!",
+    "error": "Mesaj gönderilemedi. Lütfen tekrar deneyin."
+  },
+  "footer": {
+    "rights": "Tüm hakları saklıdır.",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Koşulları"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "retry": "Tekrar Dene",
+    "readMore": "Devamını Oku",
+    "viewAll": "Tümünü Gör"
+  }
+}
