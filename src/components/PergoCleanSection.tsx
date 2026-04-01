@@ -166,7 +166,8 @@ export default function PergoCleanSection() {
             }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            🚀 Yapım Aşamasında
+            <span className="animate-pulse">⚡</span>
+            <span>Son Dokunuşlar Yapılıyor</span>
           </motion.span>
 
           {/* Title with rotating "Clean" */}
