@@ -12,7 +12,7 @@ const partnerLogos = [
   { src: "/images/logos/str.webp", name: "STR Grup" },
   { src: "/images/logos/record_v3.webp", name: "Record" },
   { src: "/images/logos/ferrini.webp", name: "Ferrini" },
-  { src: "/images/logos/reynaards.webp", name: "Reynaards" },
+  { src: "/images/logos/reynaards.webp", name: "Reynaers Aluminium" },
   { src: "/images/logos/cuppon_v3.webp", name: "Cuppon" },
   { src: "/images/logos/alusel.webp", name: "Alusel" },
   { src: "/images/logos/gtr_v3.webp", name: "GTR" },
