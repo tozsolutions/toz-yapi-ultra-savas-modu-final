@@ -1,0 +1,48 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Explicitly declare source files
+*.js text
+*.jsx text
+*.ts text
+*.tsx text
+*.json text
+*.css text
+*.scss text
+*.html text
+*.md text
+*.yml text
+*.yaml text
+
+# Deny all files in node_modules
+node_modules/* -text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.svg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.pdf binary
+*.zip binary
+
+# Windows batch files
+*.bat text
+*.cmd text
+
+# Shell scripts
+*.sh text
+eol=lf
+
+# Makefiles
+Makefile text
+eol=lf
+
+# TypeScript config files
+tsconfig*.json text

@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 5% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 5% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 5% 18%;
+
+    --primary: 270 30% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 15% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 260 10% 96%;
+    --muted-foreground: 240 5% 45%;
+
+    --accent: 270 20% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 10% 90%;
+    --input: 260 10% 90%;
+    --ring: 270 30% 25%;
+
+    --radius: 0.625rem;
+
+    /* TOZ Yapı Brand Colors - Anthracite & Purple */
+    --toz-anthracite: 220 10% 20%;
+    --toz-anthracite-light: 220 8% 35%;
+    --toz-purple: 270 30% 25%;
+    --toz-purple-light: 270 25% 40%;
+    --toz-gold: 48 100% 50%;
+    --toz-dark: 240 5% 18%;
+    --toz-dark-deep: 240 8% 8%;
+    --toz-cream: 260 15% 96%;
+    --toz-turquoise: 174 72% 46%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 10% 20%) 0%, hsl(270 30% 20%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(48 100% 50%) 0%, hsl(38 90% 45%) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(240 8% 8%) 0%, hsl(270 20% 15%) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 4px 20px -4px hsl(240 5% 18% / 0.08);
+    --shadow-card-hover: 0 12px 40px -8px hsl(270 30% 25% / 0.2);
+    --shadow-hero: 0 20px 60px -12px hsl(240 8% 8% / 0.25);
+
+    /* Typography */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5% 26%;
+    --sidebar-primary: 270 30% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 10% 96%;
+    --sidebar-accent-foreground: 240 5% 18%;
+    --sidebar-border: 260 10% 90%;
+    --sidebar-ring: 270 30% 25%;
+  }
+
+  .dark {
+    --background: 240 8% 8%;
+    --foreground: 0 0% 95%;
+    --card: 240 6% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 6% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 270 40% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 20% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 6% 16%;
+    --muted-foreground: 240 5% 60%;
+    --accent: 270 30% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 240 6% 18%;
+    --input: 240 6% 18%;
+    --ring: 270 40% 50%;
+    --sidebar-background: 240 8% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 270 40% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 6% 16%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 240 6% 18%;
+    --sidebar-ring: 270 40% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .toz-section {
+    @apply py-20 lg:py-28;
+  }
+  .toz-container {
+    @apply container mx-auto px-4 lg:px-8;
+  }
+  .toz-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+    font-family: var(--font-display);
+  }
+  .toz-subheading {
+    @apply text-lg md:text-xl text-muted-foreground max-w-3xl;
+  }
+  .toz-card-hover {
+    @apply transition-all duration-500 hover:-translate-y-2;
+    &:hover {
+      box-shadow: var(--shadow-card-hover);
+    }
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(48 100% 50%), hsl(38 90% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-purple {
+    background: linear-gradient(135deg, hsl(270 30% 25%), hsl(270 25% 45%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-toz-gradient {
+    background: linear-gradient(135deg, hsl(240 8% 8%) 0%, hsl(270 20% 15%) 100%);
+  }
+  .bg-toz-purple-gradient {
+    background: linear-gradient(135deg, hsl(270 30% 25%) 0%, hsl(270 25% 35%) 100%);
+  }
+  .bg-toz-cream {
+    background-color: hsl(260 15% 96%);
+  }
+}
+
+/* Partners carousel animation */
+@keyframes scroll-partners {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll-partners {
+  animation: scroll-partners 14s linear infinite;
+}
+.animate-scroll-partners:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Luna bot pulse */
+@keyframes luna-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(174 72% 46% / 0.5); }
+  50% { box-shadow: 0 0 0 14px hsl(174 72% 46% / 0); }
+}
+.luna-pulse {
+  animation: luna-pulse 2s infinite;
+}
+
+/* Product card glow animation */
+@keyframes product-glow {
+  0%, 100% { box-shadow: 0 0 5px 0px hsl(270 30% 40% / 0), 0 0 10px 0px hsl(270 30% 40% / 0); }
+  50% { box-shadow: 0 0 15px 3px hsl(270 30% 40% / 0.35), 0 0 30px 6px hsl(270 20% 35% / 0.15); }
+}
+.product-glow-hover:hover {
+  animation: product-glow 2s ease-in-out infinite;
+}
+
+/* Hero CTA glow */
+@keyframes cta-glow {
+  0%, 100% { box-shadow: 0 0 10px 0 hsl(270 30% 40% / 0.3); }
+  50% { box-shadow: 0 0 25px 5px hsl(270 30% 40% / 0.5), 0 0 50px 10px hsl(270 20% 35% / 0.2); }
+}
+.hero-cta-glow {
+  animation: cta-glow 3s ease-in-out infinite;
+}
