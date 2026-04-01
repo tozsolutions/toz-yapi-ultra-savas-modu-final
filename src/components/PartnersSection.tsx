@@ -60,12 +60,12 @@ export default function PartnersSection() {
           {doubled.map((logo, i) => (
             <div
               key={i}
-              className="flex-shrink-0 mx-4 w-44 h-32 bg-card rounded-2xl border border-border flex items-center justify-center p-5 group hover:border-primary/30 transition-all duration-300 shadow-sm"
+              className="flex-shrink-0 mx-4 w-48 h-36 bg-card rounded-2xl border border-border flex items-center justify-center p-6 group hover:border-primary/30 transition-all duration-300 shadow-sm"
             >
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="w-full h-full object-contain grayscale-[20%] group-hover:grayscale-0 transition-all duration-300 opacity-95 group-hover:opacity-100 transform group-hover:scale-110"
+                className="max-w-full max-h-full object-contain grayscale-[20%] group-hover:grayscale-0 transition-all duration-300 opacity-95 group-hover:opacity-100"
                 loading="eager"
               />
             </div>

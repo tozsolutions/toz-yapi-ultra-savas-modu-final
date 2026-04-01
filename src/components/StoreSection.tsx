@@ -98,7 +98,7 @@ export default function StoreSection() {
                   </div>
                   <Button
                     size="sm"
-                    className="w-full bg-primary text-primary-foreground hover:bg-toz-purple-light"
+                    className="w-full bg-[hsl(265_80%_25%)] hover:bg-[hsl(265_80%_30%)] text-white font-bold border-0 shadow-lg"
                     onClick={() => handleWhatsApp(p.title)}
                   >
                     <ShoppingCart className="w-4 h-4 mr-2" />
