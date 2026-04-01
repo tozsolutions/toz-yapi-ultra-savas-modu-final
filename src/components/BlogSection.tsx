@@ -16,13 +16,13 @@ export default function BlogSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-[#a78bfa] text-sm font-semibold uppercase tracking-widest">
+            <span className="text-primary text-sm font-semibold uppercase tracking-widest">
               Blog & Haberler
             </span>
-            <h2 className="toz-heading text-white mt-3">
-              Son <span className="text-[#22d3ee]">Yazılar</span>
+            <h2 className="toz-heading text-foreground mt-3">
+              Son <span className="text-gradient-purple">Yazılar</span>
             </h2>
-            <p className="toz-subheading mx-auto mt-4 text-gray-400">
+            <p className="toz-subheading mx-auto mt-4">
               Yapı teknolojileri, enerji verimliliği ve sürdürülebilirlik alanındaki güncel içeriklerimiz.
             </p>
           </motion.div>
@@ -38,18 +38,18 @@ export default function BlogSection() {
               transition={{ delay: i * 0.1 }}
             >
               <Link to={`/blog/${p.slug}`}>
-                <Card className="toz-card-hover h-full border-border group cursor-pointer product-glow-hover rounded-2xl bg-[#1a0524]/50">
+                <Card className="toz-card-hover h-full border-border group cursor-pointer product-glow-hover rounded-2xl">
                   <CardHeader>
-                    <Badge variant="secondary" className="w-fit mb-3 text-xs bg-[#8b5cf6]/20 text-[#a78bfa]">
+                    <Badge variant="secondary" className="w-fit mb-3 text-xs">
                       {p.tag}
                     </Badge>
-                    <CardTitle className="text-lg leading-snug text-white group-hover:text-[#22d3ee] transition-colors">
+                    <CardTitle className="text-lg leading-snug group-hover:text-primary transition-colors">
                       {p.title}
                     </CardTitle>
-                    <CardDescription className="text-sm text-gray-400">{p.desc}</CardDescription>
+                    <CardDescription className="text-sm">{p.desc}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5" /> {p.date}
                       </span>
@@ -57,7 +57,7 @@ export default function BlogSection() {
                         <Clock className="w-3.5 h-3.5" /> {p.readTime}
                       </span>
                     </div>
-                    <Button variant="outline" size="sm" className="w-full bg-[#8b5cf6]/20 border-[#8b5cf6]/30 text-[#a78bfa] hover:bg-[#8b5cf6]/30 hover:text-white transition-colors">
+                    <Button variant="outline" size="sm" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                       Devamını Oku <ChevronRight className="w-4 h-4 ml-1" />
                     </Button>
                   </CardContent>

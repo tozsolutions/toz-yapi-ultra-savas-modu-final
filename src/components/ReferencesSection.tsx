@@ -29,13 +29,13 @@ export default function ReferencesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-[#a78bfa] text-sm font-semibold uppercase tracking-widest">
+            <span className="text-primary text-sm font-semibold uppercase tracking-widest">
               Projelerimiz
             </span>
-            <h2 className="toz-heading text-white mt-3">
-              <span className="text-[#22d3ee]">Referanslarımız</span>
+            <h2 className="toz-heading text-foreground mt-3">
+              <span className="text-gradient-purple">Referanslarımız</span>
             </h2>
-            <p className="toz-subheading mx-auto mt-4 text-gray-400">
+            <p className="toz-subheading mx-auto mt-4">
               Tecrübemizle hayata geçirdiğimiz projelerden örnekler.
             </p>
           </motion.div>

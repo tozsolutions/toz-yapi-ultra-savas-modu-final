@@ -27,13 +27,13 @@ export default function ProductsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-[#a78bfa] text-sm font-semibold uppercase tracking-widest">
+            <span className="text-primary text-sm font-semibold uppercase tracking-widest">
               Ürünlerimiz
             </span>
-            <h2 className="toz-heading text-white mt-3">
-              Ürün <span className="text-[#22d3ee]">Gruplarımız</span>
+            <h2 className="toz-heading text-foreground mt-3">
+              Ürün <span className="text-gradient-purple">Gruplarımız</span>
             </h2>
-            <p className="toz-subheading mx-auto mt-4 text-gray-400">
+            <p className="toz-subheading mx-auto mt-4">
               Kapsamlı ürün yelpazemizle tüm yapı projelerinde yanınızdayız.
             </p>
           </motion.div>
@@ -72,12 +72,12 @@ export default function ProductsSection() {
                   </div>
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-[#8b5cf6]/20 text-[#a78bfa] flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
                         {iconMap[p.slug] || <Shield className="w-7 h-7" />}
                       </div>
-                      <h3 className="text-lg font-bold font-display text-white">{p.title}</h3>
+                      <h3 className="text-lg font-bold font-display text-foreground">{p.title}</h3>
                     </div>
-                    <p className="text-gray-400 text-sm leading-relaxed">{p.desc}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
                     <div className="mt-4 flex items-center text-primary text-sm font-medium group-hover:gap-2 transition-all">
                       Detayları Gör <ChevronRight className="w-4 h-4 ml-1" />
                     </div>
