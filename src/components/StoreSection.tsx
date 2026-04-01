@@ -46,7 +46,7 @@ export default function StoreSection() {
   };
 
   return (
-    <section id="store" className="toz-section bg-[#0d0118]">
+    <section id="store" className="toz-section">
       <div className="toz-container">
         <div className="text-center mb-16">
           <motion.div

@@ -19,7 +19,7 @@ const extraProducts = allProducts.slice(6);
 
 export default function ProductsSection() {
   return (
-    <section id="products" className="toz-section bg-[#0d0118]">
+    <section id="products" className="toz-section">
       <div className="toz-container">
         <div className="text-center mb-16">
           <motion.div

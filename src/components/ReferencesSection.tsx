@@ -21,7 +21,7 @@ const refs = [
 
 export default function ReferencesSection() {
   return (
-    <section id="references" className="toz-section bg-[#0d0118]">
+    <section id="references" className="toz-section bg-toz-cream">
       <div className="toz-container">
         <div className="text-center mb-16">
           <motion.div
