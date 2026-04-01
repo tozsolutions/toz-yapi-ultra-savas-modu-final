@@ -80,7 +80,9 @@ export default function Header() {
             <img
               src="/images/logos/tozyapi_logo.png"
               alt="Toz Yapı Teknolojileri"
-              className="h-16 w-auto drop-shadow-md"
+              className={`h-16 w-auto drop-shadow-md transition-all ${
+                isScrolled ? "" : "brightness-0 invert"
+              }`}
             />
           </button>
 

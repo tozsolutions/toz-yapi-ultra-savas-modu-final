@@ -48,9 +48,9 @@ export default function HeroSection() {
         <img
           src="/images/hero-anasayfa.webp"
           alt="Modern yapı teknolojileri"
-          className="w-full h-full object-cover scale-[1.03] blur-[2px]"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-toz-dark-deep/92 via-toz-anthracite/80 to-primary/45" />
+        <div className="absolute inset-0 bg-gradient-to-br from-toz-dark-deep/85 via-toz-anthracite/75 to-primary/40" />
       </div>
 
       {/* Grid Pattern Overlay */}
@@ -71,17 +71,6 @@ export default function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-5xl mx-auto"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-block mb-6"
-          >
-            <span className="bg-primary/20 border border-primary/30 text-primary-foreground px-5 py-2 rounded-full text-sm font-medium tracking-wider uppercase">
-              LUNA AI AKTİF · 7/24 HİZMETİNİZDE
-            </span>
-          </motion.div>
-
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[0.95] tracking-tight">
             <span className="text-primary-foreground">Akıllı </span>
             <span className="text-gradient-gold">Yapı</span>
