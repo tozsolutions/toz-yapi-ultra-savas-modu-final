@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const LAUNCH_DATE = new Date();
-LAUNCH_DATE.setMonth(LAUNCH_DATE.getMonth() + 3);
+LAUNCH_DATE.setDate(LAUNCH_DATE.getDate() + 60);
 
 function useCountdown(target: Date) {
   const calc = () => {
@@ -22,58 +22,101 @@ function useCountdown(target: Date) {
   return time;
 }
 
-// Animated rotating characters for Pergo???
-function RotatingText({ letters }: { letters: string[] }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+// 29 harfli rotating text for "Clean" part
+function RotatingCleanText() {
+  const cleanChars = "CLEANTEMİZLİKSİSTEMİPERGOKullan";
+  const [display, setDisplay] = useState("Clean");
+  const [offset, setOffset] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % letters.length);
-    }, 800);
-    return () => clearInterval(id);
-  }, [letters.length]);
+    const interval = setInterval(() => {
+      setOffset((prev) => (prev + 1) % cleanChars.length);
+      // Show 5 characters at a time
+      const chars = [];
+      for (let i = 0; i < 5; i++) {
+        chars.push(cleanChars[(offset + i) % cleanChars.length]);
+      }
+      setDisplay(chars.join(""));
+    }, 300);
+    return () => clearInterval(interval);
+  }, [offset]);
 
   return (
-    <span className="inline-flex">
-      {letters.map((letter, i) => (
-        <motion.span
-          key={i}
-          initial={{ rotateY: 0, opacity: 1 }}
-          animate={{
-            rotateY: i === currentIndex ? 360 : 0,
-            opacity: i === currentIndex ? 0.5 : 1,
-          }}
-          transition={{
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="inline-block"
-          style={{
-            color: i < 5 ? 'hsl(160,60%,50%)' : 'hsl(265,100%,60%)',
-          }}
-        >
-          {letter}
-        </motion.span>
-      ))}
+    <span className="inline-block min-w-[140px] text-center bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+      {display}
     </span>
   );
 }
 
 export default function PergoCleanSection() {
   const { days, hours, minutes, seconds } = useCountdown(LAUNCH_DATE);
-  const pergoLetters = ['P', 'e', 'r', 'g', 'o', '?', '?', '?'];
 
   return (
-    <section id="pergoclean" className="relative py-16 lg:py-20 overflow-hidden">
-      {/* Background - Match mor-web-liart.vercel.app */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(265,100%,15%)] via-[hsl(265,100%,25%)] to-[hsl(160,60%,20%)]" />
+    <section id="pergoclean" className="relative py-20 lg:py-28 overflow-hidden">
+      {/* Background - EXACT match to pergoclean1.html */}
+      <div className="absolute inset-0 bg-[#0d0118]" />
+      
+      {/* Animated Orbs */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          className="absolute w-[600px] h-[600px] bg-purple-600/15 rounded-full blur-[80px] -top-[20%] -left-[10%]"
+          animate={{
+            x: [0, 50, -30, 40, 0],
+            y: [0, -50, 30, 20, 0],
+            scale: [1, 1.1, 0.9, 1.05, 1],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute w-[500px] h-[500px] bg-pink-500/10 rounded-full blur-[80px] -bottom-[10%] -right-[10%]"
+          animate={{
+            x: [0, 50, -30, 40, 0],
+            y: [0, -50, 30, 20, 0],
+            scale: [1, 1.1, 0.9, 1.05, 1],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 7 }}
+        />
+        <motion.div
+          className="absolute w-[400px] h-[400px] bg-cyan-500/8 rounded-full blur-[80px] top-[40%] right-[20%]"
+          animate={{
+            x: [0, 50, -30, 40, 0],
+            y: [0, -50, 30, 20, 0],
+            scale: [1, 1.1, 0.9, 1.05, 1],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 14 }}
+        />
+      </div>
+
+      {/* Grid Pattern */}
       <div
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-30"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 25% 50%, hsl(160 60% 40% / 0.3) 0%, transparent 50%), radial-gradient(circle at 75% 50%, hsl(265 100% 50% / 0.3) 0%, transparent 50%)",
+            "linear-gradient(rgba(139,92,246,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.03) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
         }}
       />
+
+      {/* Particles */}
+      <div className="absolute inset-0">
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-purple-500/40 rounded-full"
+            style={{ left: `${10 + i * 20}%` }}
+            animate={{
+              y: ["100vh", "-100px"],
+              opacity: [0, 1, 1, 0],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              delay: i * 3,
+              ease: "linear",
+            }}
+          />
+        ))}
+      </div>
 
       <div className="relative z-10 toz-container text-center">
         <motion.div
@@ -82,19 +125,28 @@ export default function PergoCleanSection() {
           viewport={{ once: true }}
         >
           {/* Badge */}
-          <span className="inline-block bg-white/10 border border-white/20 text-white px-5 py-2 rounded-full text-sm font-medium tracking-wider uppercase mb-6">
-            Yakında Geliyor
-          </span>
+          <motion.span
+            className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600/15 border border-purple-600/30 rounded-full text-sm font-bold text-purple-400 tracking-widest uppercase mb-8"
+            animate={{
+              boxShadow: ["0 0 0 0 rgba(139,92,246,0.4)", "0 0 0 15px rgba(139,92,246,0)", "0 0 0 0 rgba(139,92,246,0)"],
+            }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            🚀 Yapım Aşamasında
+          </motion.span>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-display)" }}>
-            <RotatingText letters={pergoLetters} />
+          {/* Title with rotating "Clean" */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6" style={{ fontFamily: "var(--font-display)" }}>
+            <span className="text-white">Pergo</span>
+            <RotatingCleanText />
           </h2>
-          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8">
-            Pergola ve dış mekan yapıları için profesyonel temizlik ve bakım sistemi.
+          
+          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+            Pergola, Tente, RollingRoof, BioClimatic ve Zip Perde sistemleri için profesyonel ve ekonomik çalışma için az kaldı.
           </p>
 
-          {/* Countdown - Compact */}
-          <div className="flex justify-center gap-3 md:gap-6 mb-10">
+          {/* Countdown */}
+          <div className="grid grid-cols-4 gap-4 md:gap-6 max-w-3xl mx-auto mb-12">
             {[
               { val: days, label: "Gün" },
               { val: hours, label: "Saat" },
@@ -107,24 +159,22 @@ export default function PergoCleanSection() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex flex-col items-center"
+                className="bg-purple-600/10 border border-purple-600/20 rounded-2xl p-4 md:p-6 backdrop-blur-sm hover:-translate-y-2 hover:bg-purple-600/15 hover:border-purple-600/40 transition-all"
               >
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
-                  <span className="text-2xl md:text-3xl font-bold text-white" style={{ fontFamily: "var(--font-display)" }}>
-                    {String(unit.val).padStart(2, "0")}
-                  </span>
-                </div>
-                <span className="text-xs text-white/60 mt-1 font-medium">{unit.label}</span>
+                <span className="text-3xl md:text-5xl font-black bg-gradient-to-r from-purple-300 to-pink-400 bg-clip-text text-transparent block mb-2" style={{ fontFamily: "var(--font-display)" }}>
+                  {String(unit.val).padStart(2, "0")}
+                </span>
+                <span className="text-xs md:text-sm text-gray-400 uppercase tracking-wider">{unit.label}</span>
               </motion.div>
             ))}
           </div>
 
-          {/* Notification CTA */}
-          <p className="text-white/50 text-sm">
+          {/* CTA */}
+          <p className="text-gray-500 text-sm">
             Haberdar olmak için{" "}
             <button
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="text-[hsl(160,60%,50%)] hover:text-[hsl(160,60%,60%)] underline underline-offset-4 transition-colors"
+              className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 transition-colors"
             >
               iletişime geçin
             </button>
