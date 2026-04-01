@@ -46,7 +46,7 @@ export default function StoreSection() {
   };
 
   return (
-    <section id="store" className="toz-section">
+    <section id="store" className="toz-section bg-[#0d0118]">
       <div className="toz-container">
         <div className="text-center mb-16">
           <motion.div
@@ -54,13 +54,13 @@ export default function StoreSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-primary text-sm font-semibold uppercase tracking-widest">
+            <span className="text-[#a78bfa] text-sm font-semibold uppercase tracking-widest">
               Online Mağaza
             </span>
-            <h2 className="toz-heading text-foreground mt-3">
-              Öne Çıkan <span className="text-gradient-purple">Ürünler</span>
+            <h2 className="toz-heading text-white mt-3">
+              Öne Çıkan <span className="text-[#22d3ee]">Ürünler</span>
             </h2>
-            <p className="toz-subheading mx-auto mt-4">
+            <p className="toz-subheading mx-auto mt-4 text-gray-400">
               Motor, kumanda ve yedek parça ürünlerimizi online sipariş edin.
             </p>
           </motion.div>
@@ -88,17 +88,17 @@ export default function StoreSection() {
                   </Badge>
                 </div>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-base leading-tight">{p.title}</CardTitle>
-                  <CardDescription className="text-xs">{p.desc}</CardDescription>
+                  <CardTitle className="text-base leading-snug text-white">{p.title}</CardTitle>
+                  <CardDescription className="text-xs text-gray-400">{p.desc}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xl font-bold text-primary">{p.price}</span>
-                    <span className="text-sm text-muted-foreground line-through">{p.oldPrice}</span>
+                    <span className="text-xl font-bold text-[#22d3ee]">{p.price}</span>
+                    <span className="text-sm text-gray-500 line-through">{p.oldPrice}</span>
                   </div>
                   <Button
                     size="sm"
-                    className="w-full bg-primary text-primary-foreground hover:bg-toz-purple-light"
+                    className="w-full bg-gradient-to-r from-[#8b5cf6] to-[#ec4899] hover:from-[#a78bfa] hover:to-[#f472b6] text-white font-bold border-0"
                     onClick={() => handleWhatsApp(p.title)}
                   >
                     <ShoppingCart className="w-4 h-4 mr-2" />

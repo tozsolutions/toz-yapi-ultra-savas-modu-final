@@ -21,7 +21,7 @@ const refs = [
 
 export default function ReferencesSection() {
   return (
-    <section id="references" className="toz-section bg-toz-cream">
+    <section id="references" className="toz-section bg-[#0d0118]">
       <div className="toz-container">
         <div className="text-center mb-16">
           <motion.div
@@ -29,13 +29,13 @@ export default function ReferencesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-primary text-sm font-semibold uppercase tracking-widest">
+            <span className="text-[#a78bfa] text-sm font-semibold uppercase tracking-widest">
               Projelerimiz
             </span>
-            <h2 className="toz-heading text-foreground mt-3">
-              <span className="text-gradient-purple">Referanslarımız</span>
+            <h2 className="toz-heading text-white mt-3">
+              <span className="text-[#22d3ee]">Referanslarımız</span>
             </h2>
-            <p className="toz-subheading mx-auto mt-4">
+            <p className="toz-subheading mx-auto mt-4 text-gray-400">
               Tecrübemizle hayata geçirdiğimiz projelerden örnekler.
             </p>
           </motion.div>
