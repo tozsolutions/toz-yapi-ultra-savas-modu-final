@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 5% 18%;
 
-    --primary: 270 30% 25%;
+    --primary: 265 100% 55%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 270 15% 45%;
@@ -24,7 +24,7 @@
     --muted: 260 10% 96%;
     --muted-foreground: 240 5% 45%;
 
-    --accent: 270 20% 35%;
+    --accent: 265 100% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,15 +32,15 @@
 
     --border: 260 10% 90%;
     --input: 260 10% 90%;
-    --ring: 270 30% 25%;
+    --ring: 265 100% 55%;
 
     --radius: 0.625rem;
 
-    /* TOZ Yapı Brand Colors - Anthracite & Purple */
+    /* TOZ Yapı Brand Colors - Anthracite & Vibrant Purple */
     --toz-anthracite: 220 10% 20%;
     --toz-anthracite-light: 220 8% 35%;
-    --toz-purple: 270 30% 25%;
-    --toz-purple-light: 270 25% 40%;
+    --toz-purple: 265 100% 55%;
+    --toz-purple-light: 265 100% 65%;
     --toz-gold: 48 100% 50%;
     --toz-dark: 240 5% 18%;
     --toz-dark-deep: 240 8% 8%;
@@ -48,9 +48,9 @@
     --toz-turquoise: 174 72% 46%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 10% 20%) 0%, hsl(270 30% 20%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 10% 20%) 0%, hsl(265 100% 45%) 100%);
     --gradient-gold: linear-gradient(135deg, hsl(48 100% 50%) 0%, hsl(38 90% 45%) 100%);
-    --gradient-dark: linear-gradient(135deg, hsl(240 8% 8%) 0%, hsl(270 20% 15%) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(240 8% 8%) 0%, hsl(265 100% 40%) 100%);
 
     /* Shadows */
     --shadow-card: 0 4px 20px -4px hsl(240 5% 18% / 0.08);
