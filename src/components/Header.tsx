@@ -78,7 +78,7 @@ export default function Header() {
           {/* Logo */}
           <button onClick={() => scrollTo("home")} className="flex items-center gap-3">
             <img
-              src="/images/logos/tozyapi_logo.png?v=4"
+              src="/images/logos/tozyapi_logo.png?v=5"
               alt="Toz Yapı Teknolojileri"
               className={`h-16 w-auto drop-shadow-md transition-all ${
                 isScrolled ? "" : "brightness-0 invert"
