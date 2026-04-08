@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 
 const LAUNCH_DATE = new Date();
 LAUNCH_DATE.setDate(LAUNCH_DATE.getDate() + 60);
 
 function useCountdown(target: Date) {
-  const calc = () => {
+  const calc = useCallback(() => {
     const diff = Math.max(0, target.getTime() - Date.now());
     return {
       days: Math.floor(diff / 86400000),
@@ -13,12 +13,12 @@ function useCountdown(target: Date) {
       minutes: Math.floor((diff % 3600000) / 60000),
       seconds: Math.floor((diff % 60000) / 1000),
     };
-  };
+  }, [target]);
   const [time, setTime] = useState(calc);
   useEffect(() => {
     const id = setInterval(() => setTime(calc), 1000);
     return () => clearInterval(id);
-  }, []);
+  }, [calc]);
   return time;
 }
 

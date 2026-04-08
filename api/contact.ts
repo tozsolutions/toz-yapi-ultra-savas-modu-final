@@ -48,7 +48,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // Validate phone format (optional)
     if (phone) {
-      const phoneRegex = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/;
+      const phoneRegex = /^[+]?\(?[0-9]{1,4}\)?[-\s.]?\(?[0-9]{1,4}\)?[-\s.]?[0-9]{1,9}$/;
       if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
         return res.status(400).json({
           error: 'Invalid phone format',
