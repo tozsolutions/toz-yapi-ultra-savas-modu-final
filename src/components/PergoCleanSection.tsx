@@ -41,7 +41,7 @@ function RotatingCleanText() {
 }
 
 function IndependentRotatingLetter({ allChars, delay }: { allChars: string; delay: number }) {
-  const [char, setChar] = useState(allChars[Math.floor(Math.random() * allChars.length)]);
+  const [char, setChar] = useState(allChars[0]);
   const [rotation, setRotation] = useState(0);
 
   useEffect(() => {

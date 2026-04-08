@@ -27,7 +27,7 @@ export const AnalyticsProvider = ({ children, trackingId }: AnalyticsProviderPro
 
   useEffect(() => {
     const gaId = trackingId || import.meta.env.VITE_GA_TRACKING_ID;
-    
+
     if (gaId) {
       try {
         ReactGA.initialize(gaId, {
@@ -35,7 +35,9 @@ export const AnalyticsProvider = ({ children, trackingId }: AnalyticsProviderPro
             cookie_flags: 'SameSite=None;Secure',
           },
         });
-        setInitialized(true);
+        queueMicrotask(() => {
+          setInitialized(true);
+        });
         console.log('[Analytics] Google Analytics initialized');
       } catch (error) {
         console.error('[Analytics] Failed to initialize:', error);
