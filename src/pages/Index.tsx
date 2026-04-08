@@ -1,17 +1,19 @@
+import { Suspense, lazy } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ProductsSection from "@/components/ProductsSection";
-import ReferencesSection from "@/components/ReferencesSection";
-import StoreSection from "@/components/StoreSection";
-import BlogSection from "@/components/BlogSection";
-import FAQSection from "@/components/FAQSection";
-import PartnersSection from "@/components/PartnersSection";
-import PergoCleanSection from "@/components/PergoCleanSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
-import LunaBot from "@/components/LunaBot";
-import ScrollToTop from "@/components/ScrollToTop";
+
+const ReferencesSection = lazy(() => import("@/components/ReferencesSection"));
+const StoreSection = lazy(() => import("@/components/StoreSection"));
+const BlogSection = lazy(() => import("@/components/BlogSection"));
+const FAQSection = lazy(() => import("@/components/FAQSection"));
+const PartnersSection = lazy(() => import("@/components/PartnersSection"));
+const PergoCleanSection = lazy(() => import("@/components/PergoCleanSection"));
+const ContactSection = lazy(() => import("@/components/ContactSection"));
+const Footer = lazy(() => import("@/components/Footer"));
+const LunaBot = lazy(() => import("@/components/LunaBot"));
+const ScrollToTop = lazy(() => import("@/components/ScrollToTop"));
 
 const Index = () => {
   return (
@@ -20,16 +22,19 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <ProductsSection />
-      <ReferencesSection />
-      <StoreSection />
-      <BlogSection />
-      <FAQSection />
-      <PartnersSection />
-      <PergoCleanSection />
-      <ContactSection />
-      <Footer />
-      <LunaBot />
-      <ScrollToTop />
+
+      <Suspense fallback={<div className="px-4 py-8 text-sm">İçerik yükleniyor...</div>}>
+        <ReferencesSection />
+        <StoreSection />
+        <BlogSection />
+        <FAQSection />
+        <PartnersSection />
+        <PergoCleanSection />
+        <ContactSection />
+        <Footer />
+        <LunaBot />
+        <ScrollToTop />
+      </Suspense>
     </div>
   );
 };
