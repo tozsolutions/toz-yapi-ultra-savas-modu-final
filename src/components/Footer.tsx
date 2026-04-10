@@ -31,7 +31,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <img src="/images/logos/tozyapi_logo.png?v=5" alt="Toz Yapı Teknolojileri" className="h-16 mb-4 object-contain" width="200" height="80" loading="lazy" />
+            <img src="/images/logos/tozyapi-logo.webp" alt="Toz Yapı Teknolojileri" className="h-16 mb-4 object-contain" width="120" height="40" loading="lazy" />
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               2008'den bu yana yapı teknolojileri sektöründe yenilikçi ve kaliteli çözümler sunan güvenilir markadır.
             </p>

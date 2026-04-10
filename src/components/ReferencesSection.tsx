@@ -46,6 +46,9 @@ export default function ReferencesSection() {
                 alt={r.label}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
+                width="400"
+                height="300"
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
               />
               <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/30 transition-colors duration-300 flex items-end p-3">
                 <span className="text-primary-foreground text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity bg-foreground/50 backdrop-blur-sm rounded-lg px-2 py-1">

@@ -47,6 +47,9 @@ export default function ProductsSection() {
                       alt={p.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       loading="lazy"
+                      width="400"
+                      height="300"
+                      sizes="(max-width: 768px) 100vw, 400px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-1.5">
@@ -91,6 +94,9 @@ export default function ProductsSection() {
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
+                  width="400"
+                  height="200"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent flex items-end p-4">
                   <span className="text-primary-foreground font-semibold text-sm">{item.title}</span>

@@ -28,7 +28,7 @@ export default function ProductDetail() {
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <div className="relative h-[50vh] min-h-[320px] overflow-hidden">
-        <img src={heroImg} alt={product.title} className="w-full h-full object-cover" />
+        <img src={heroImg} alt={product.title} className="w-full h-full object-cover" loading="eager" fetchpriority="high" width="1600" height="600" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-8">
           <div className="toz-container">
@@ -73,11 +73,11 @@ export default function ProductDetail() {
               <h3 className="text-xl font-bold text-foreground font-display mb-4">Galeri</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl overflow-hidden product-glow-hover">
-                  <img src={product.image} alt={product.title} className="w-full h-48 object-cover" loading="lazy" />
+                  <img src={product.image} alt={product.title} className="w-full h-48 object-cover" loading="lazy" width="400" height="200" />
                 </div>
                 {product.heroImage && (
                   <div className="rounded-xl overflow-hidden product-glow-hover">
-                    <img src={product.heroImage} alt={product.title} className="w-full h-48 object-cover" loading="lazy" />
+                    <img src={product.heroImage} alt={product.title} className="w-full h-48 object-cover" loading="lazy" width="400" height="200" />
                   </div>
                 )}
               </div>

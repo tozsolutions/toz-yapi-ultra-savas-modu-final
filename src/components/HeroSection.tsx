@@ -45,9 +45,13 @@ export default function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-anasayfa.webp?v=2"
+          src="/images/hero-anasayfa-optimized.webp"
           alt="Modern yapı teknolojileri"
           className="w-full h-full object-cover brightness-110 contrast-110 saturate-110"
+          loading="eager"
+          fetchpriority="high"
+          width="1600"
+          height="900"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-toz-dark-deep/75 via-toz-anthracite/65 to-primary/30" />
       </div>
