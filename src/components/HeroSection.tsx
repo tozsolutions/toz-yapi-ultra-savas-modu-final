@@ -45,7 +45,7 @@ export default function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-anasayfa-optimized.webp"
+          src="/images/hero-anasayfa-optimized.webp?v=3"
           alt="Modern yapı teknolojileri"
           className="w-full h-full object-cover brightness-110 contrast-110 saturate-110"
           loading="eager"

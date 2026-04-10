@@ -102,7 +102,7 @@ export default function LunaBot() {
           </div>
         ) : (
           <img
-            src="/images/logos/luna-avatar.webp"
+            src="/images/logos/luna-avatar.webp?v=3"
             alt="Luna AI"
             className="w-full h-full rounded-full object-cover"
             width="60"
@@ -120,7 +120,7 @@ export default function LunaBot() {
             {/* Header */}
             <div className="bg-primary text-primary-foreground p-4 flex items-center gap-3">
               <img
-                src="/images/logos/luna-avatar.webp"
+                src="/images/logos/luna-avatar.webp?v=3"
                 alt="Luna"
                 className="w-10 h-10 rounded-full object-cover border-2 border-primary-foreground/30"
                 width="40"
