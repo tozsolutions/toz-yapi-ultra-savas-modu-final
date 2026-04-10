@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ChevronRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
@@ -65,10 +64,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 toz-container text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+        <div
           className="max-w-5xl mx-auto"
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[0.95] tracking-tight">
@@ -108,10 +104,7 @@ export default function HeroSection() {
           </div>
 
           {/* Animated Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
+          <div
             className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-3xl mx-auto"
           >
             {[
@@ -125,18 +118,16 @@ export default function HeroSection() {
                 <div className="text-primary-foreground/60 text-sm mt-1">{stat.label}</div>
               </div>
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
+      <div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <ChevronDown className="w-8 h-8 text-primary-foreground/50" />
-      </motion.div>
+      </div>
     </section>
   );
 }

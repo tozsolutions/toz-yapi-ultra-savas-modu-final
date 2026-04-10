@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -11,11 +10,7 @@ export default function BlogSection() {
     <section id="blog" className="toz-section bg-toz-cream">
       <div className="toz-container">
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <span className="text-[1rem] md:text-[1.08rem] text-primary font-semibold uppercase tracking-widest">
               Blog & Haberler
             </span>
@@ -25,17 +20,13 @@ export default function BlogSection() {
             <p className="toz-subheading mx-auto mt-4">
               Yapı teknolojileri, enerji verimliliği ve sürdürülebilirlik alanındaki güncel içeriklerimiz.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((p, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
             >
               <Link to={`/blog/${p.slug}`}>
                 <Card className="toz-card-hover h-full border-border group cursor-pointer product-glow-hover rounded-2xl">
@@ -63,7 +54,7 @@ export default function BlogSection() {
                   </CardContent>
                 </Card>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

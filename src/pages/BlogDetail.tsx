@@ -3,7 +3,6 @@ import { getBlogBySlug, blogPosts } from "@/data/blogPosts";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export default function BlogDetail() {
@@ -31,7 +30,7 @@ export default function BlogDetail() {
           <Link to="/#blog" className="inline-flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-primary-foreground mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Blog'a Dön
           </Link>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <div>
             <Badge className="mb-4 bg-primary-foreground/10 text-primary-foreground border-primary-foreground/20">
               {post.tag}
             </Badge>
@@ -46,17 +45,14 @@ export default function BlogDetail() {
                 <Clock className="w-4 h-4" /> {post.readTime}
               </span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {/* Content */}
       <div className="toz-container py-12">
         <div className="grid lg:grid-cols-3 gap-12">
-          <motion.article
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+          <article
             className="lg:col-span-2 prose prose-lg max-w-none text-foreground prose-headings:font-display prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-li:text-muted-foreground prose-ul:text-muted-foreground"
           >
             {post.content.split("\n\n").map((para, i) => {
@@ -78,7 +74,7 @@ export default function BlogDetail() {
               }
               return <p key={i} dangerouslySetInnerHTML={{ __html: para.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") }} />;
             })}
-          </motion.article>
+          </article>
 
           {/* Sidebar */}
           <div className="space-y-6">

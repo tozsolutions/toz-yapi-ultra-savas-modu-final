@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import {
   Accordion,
@@ -39,18 +38,14 @@ export default function FAQSection() {
     <section id="faq" className="toz-section">
       <div className="toz-container">
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <span className="text-primary text-sm font-semibold uppercase tracking-widest">
               S.S.S
             </span>
             <h2 className="toz-heading text-foreground mt-3">
               Sıkça Sorulan <span className="text-gradient-purple">Sorular</span>
             </h2>
-          </motion.div>
+          </div>
         </div>
 
         <div className="max-w-3xl mx-auto">

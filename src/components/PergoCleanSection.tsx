@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import { motion } from "framer-motion";
 
 const LAUNCH_DATE = new Date();
 LAUNCH_DATE.setDate(LAUNCH_DATE.getDate() + 60);
@@ -60,16 +59,8 @@ function IndependentRotatingLetter({ allChars, delay }: { allChars: string; dela
   }, [allChars]);
 
   return (
-    <motion.span
+    <span
       className="inline-block w-8 md:w-10 text-center"
-      animate={{
-        rotateY: rotation,
-        scale: [1, 1.1, 1],
-      }}
-      transition={{
-        rotateY: { duration: 0.4, ease: "easeInOut" },
-        scale: { duration: 0.3, repeat: Infinity, repeatType: "reverse", delay },
-      }}
       style={{
         background: "linear-gradient(135deg, #22d3ee, #a78bfa, #f472b6)",
         WebkitBackgroundClip: "text",
@@ -78,7 +69,7 @@ function IndependentRotatingLetter({ allChars, delay }: { allChars: string; dela
       }}
     >
       {char}
-    </motion.span>
+    </span>
   );
 }
 
@@ -92,32 +83,14 @@ export default function PergoCleanSection() {
       
       {/* Animated Orbs */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
+        <div
           className="absolute w-[600px] h-[600px] bg-purple-600/15 rounded-full blur-[80px] -top-[20%] -left-[10%]"
-          animate={{
-            x: [0, 50, -30, 40, 0],
-            y: [0, -50, 30, 20, 0],
-            scale: [1, 1.1, 0.9, 1.05, 1],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         />
-        <motion.div
+        <div
           className="absolute w-[500px] h-[500px] bg-pink-500/10 rounded-full blur-[80px] -bottom-[10%] -right-[10%]"
-          animate={{
-            x: [0, 50, -30, 40, 0],
-            y: [0, -50, 30, 20, 0],
-            scale: [1, 1.1, 0.9, 1.05, 1],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 7 }}
         />
-        <motion.div
+        <div
           className="absolute w-[400px] h-[400px] bg-cyan-500/8 rounded-full blur-[80px] top-[40%] right-[20%]"
-          animate={{
-            x: [0, 50, -30, 40, 0],
-            y: [0, -50, 30, 20, 0],
-            scale: [1, 1.1, 0.9, 1.05, 1],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 14 }}
         />
       </div>
 
@@ -134,41 +107,23 @@ export default function PergoCleanSection() {
       {/* Particles */}
       <div className="absolute inset-0">
         {[...Array(5)].map((_, i) => (
-          <motion.div
+          <div
             key={i}
             className="absolute w-1 h-1 bg-purple-500/40 rounded-full"
             style={{ left: `${10 + i * 20}%` }}
-            animate={{
-              y: ["100vh", "-100px"],
-              opacity: [0, 1, 1, 0],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              delay: i * 3,
-              ease: "linear",
-            }}
           />
         ))}
       </div>
 
       <div className="relative z-10 toz-container text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
+        <div>
           {/* Badge */}
-          <motion.span
+          <span
             className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600/15 border border-purple-600/30 rounded-full text-sm font-bold text-purple-400 tracking-widest uppercase mb-8"
-            animate={{
-              boxShadow: ["0 0 0 0 rgba(139,92,246,0.4)", "0 0 0 15px rgba(139,92,246,0)", "0 0 0 0 rgba(139,92,246,0)"],
-            }}
-            transition={{ duration: 2, repeat: Infinity }}
           >
             <span className="animate-pulse">⚡</span>
             <span>Son Dokunuşlar Yapılıyor</span>
-          </motion.span>
+          </span>
 
           {/* Title with rotating "Clean" */}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6" style={{ fontFamily: "var(--font-display)" }}>
@@ -188,19 +143,15 @@ export default function PergoCleanSection() {
               { val: minutes, label: "Dakika" },
               { val: seconds, label: "Saniye" },
             ].map((unit, i) => (
-              <motion.div
+              <div
                 key={i}
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
                 className="bg-purple-600/10 border border-purple-600/20 rounded-2xl p-4 md:p-6 backdrop-blur-sm hover:-translate-y-2 hover:bg-purple-600/15 hover:border-purple-600/40 transition-all"
               >
                 <span className="text-3xl md:text-5xl font-black bg-gradient-to-r from-purple-300 to-pink-400 bg-clip-text text-transparent block mb-2" style={{ fontFamily: "var(--font-display)" }}>
                   {String(unit.val).padStart(2, "0")}
                 </span>
                 <span className="text-xs md:text-sm text-gray-400 uppercase tracking-wider">{unit.label}</span>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -214,7 +165,7 @@ export default function PergoCleanSection() {
               iletişime geçin
             </button>
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

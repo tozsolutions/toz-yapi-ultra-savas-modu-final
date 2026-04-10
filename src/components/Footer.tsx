@@ -111,7 +111,7 @@ export default function Footer() {
       <div className="border-t border-primary-foreground/10">
         <div className="toz-container py-6 flex flex-col items-center gap-3">
           <p className="text-xs text-primary-foreground/50">Site tasarımı ve kreatif üretim</p>
-          <img src="/images/logos/designer-logo.png" alt="Toz Eco Solutions" className="h-8 w-auto opacity-70" />
+          <img src="/images/logos/designer-logo.webp" alt="Toz Eco Solutions" className="h-8 w-auto opacity-70" />
         </div>
       </div>
 

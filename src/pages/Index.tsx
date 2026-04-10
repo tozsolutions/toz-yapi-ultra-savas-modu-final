@@ -1,8 +1,9 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useState, useEffect } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ProductsSection from "@/components/ProductsSection";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const ReferencesSection = lazy(() => import("@/components/ReferencesSection"));
 const StoreSection = lazy(() => import("@/components/StoreSection"));
@@ -12,10 +13,18 @@ const PartnersSection = lazy(() => import("@/components/PartnersSection"));
 const PergoCleanSection = lazy(() => import("@/components/PergoCleanSection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
 const Footer = lazy(() => import("@/components/Footer"));
-const LunaBot = lazy(() => import("@/components/LunaBot"));
-const ScrollToTop = lazy(() => import("@/components/ScrollToTop"));
+const LazyLunaBot = lazy(() => import("@/components/LunaBot"));
 
 const Index = () => {
+  const [loadBot, setLoadBot] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoadBot(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -32,9 +41,13 @@ const Index = () => {
         <PergoCleanSection />
         <ContactSection />
         <Footer />
-        <LunaBot />
-        <ScrollToTop />
       </Suspense>
+      {loadBot && (
+        <Suspense fallback={null}>
+          <LazyLunaBot />
+        </Suspense>
+      )}
+      <ScrollToTop />
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import { X, Send, MessageCircle } from "lucide-react";
+import { X, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
 
 const PRODUCT_GROUPS = [
   "Panjur Sistemleri", "Kepenk Sistemleri", "Pergola & Tente & Rolling Roof",
@@ -103,7 +102,7 @@ export default function LunaBot() {
           </div>
         ) : (
           <img
-            src="/images/logos/Luna.png"
+            src="/images/logos/Luna.webp"
             alt="Luna AI"
             className="w-full h-full rounded-full object-cover"
           />
@@ -111,18 +110,14 @@ export default function LunaBot() {
       </button>
 
       {/* Chat window */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 h-[30rem] bg-card border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden"
-          >
+      {isOpen && (
+        <div
+          className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 h-[30rem] bg-card border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+        >
             {/* Header */}
             <div className="bg-primary text-primary-foreground p-4 flex items-center gap-3">
               <img
-                src="/images/logos/Luna.png"
+                src="/images/logos/Luna.webp"
                 alt="Luna"
                 className="w-10 h-10 rounded-full object-cover border-2 border-primary-foreground/30"
               />
@@ -182,9 +177,8 @@ export default function LunaBot() {
                 <Send className="w-4 h-4" />
               </Button>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
     </>
   );
 }
