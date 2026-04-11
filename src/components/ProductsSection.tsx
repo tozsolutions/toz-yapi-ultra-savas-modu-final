@@ -47,6 +47,7 @@ export default function ProductsSection() {
                       alt={p.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       loading="lazy"
+                      decoding="async"
                       width="400"
                       height="300"
                       sizes="(max-width: 768px) 100vw, 400px"
@@ -94,6 +95,7 @@ export default function ProductsSection() {
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
+                  decoding="async"
                   width="400"
                   height="200"
                   sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"

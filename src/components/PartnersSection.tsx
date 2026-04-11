@@ -63,6 +63,7 @@ export default function PartnersSection() {
                   alt={logo.name}
                   className="max-w-full max-h-full object-contain grayscale-[20%] group-hover:grayscale-0 transition-all duration-300 opacity-95 group-hover:opacity-100"
                   loading="lazy"
+                  decoding="async"
                   width="120"
                   height="90"
                 />

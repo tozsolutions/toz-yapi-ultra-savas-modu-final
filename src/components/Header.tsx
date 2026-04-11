@@ -77,7 +77,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           <button onClick={() => scrollTo("home")} className="flex items-center gap-3">
             <img
-              src="/images/logos/tozyapi-logo.webp?v=3"
+              src="/images/logos/tozyapi-logo.webp?v=6"
               alt="Toz Yapı Teknolojileri"
               className={`h-16 w-auto drop-shadow-md transition-all ${
                 isScrolled ? "" : "brightness-0 invert"
@@ -85,6 +85,8 @@ export default function Header() {
               width="120"
               height="40"
               loading="eager"
+              fetchpriority="high"
+              decoding="async"
             />
           </button>
 
@@ -162,6 +164,7 @@ export default function Header() {
                       width="56"
                       height="56"
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <span className="text-sm font-medium text-foreground">
