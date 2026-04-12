@@ -1,7 +1,8 @@
 import { ChevronRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useEffect, useRef, useState } from "react";
-import QuickQuote from "@/components/QuickQuote";
+import { useEffect, useRef, useState, Suspense, lazy } from "react";
+
+const QuickQuote = lazy(() => import("@/components/QuickQuote"));
 
 function AnimatedCounter({ target, suffix = "", duration = 2000 }: { target: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -131,7 +132,9 @@ export default function HeroSection() {
 
           {/* Quick Quote Form */}
           <div className="mt-12 max-w-xl mx-auto">
-            <QuickQuote />
+            <Suspense fallback={<div className="h-20 bg-card/50 rounded-xl animate-pulse" />}>
+              <QuickQuote />
+            </Suspense>
           </div>
         </div>
       </div>

@@ -4,9 +4,11 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ProductsSection from "@/components/ProductsSection";
 import ScrollToTop from "@/components/ScrollToTop";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
+
+// Lazy load non-critical above-the-fold components
+const StickyMobileCTA = lazy(() => import("@/components/StickyMobileCTA"));
+const WhatsAppFloat = lazy(() => import("@/components/WhatsAppFloat"));
+const ExitIntentPopup = lazy(() => import("@/components/ExitIntentPopup"));
 
 const ReferencesSection = lazy(() => import("@/components/ReferencesSection"));
 const StoreSection = lazy(() => import("@/components/StoreSection"));

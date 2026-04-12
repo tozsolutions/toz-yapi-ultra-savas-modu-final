@@ -63,7 +63,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display font-bold text-lg mb-4">Hızlı Bağlantılar</h4>
+            <div className="font-display font-bold text-lg mb-4 text-foreground">Hızlı Bağlantılar</div>
             <ul className="space-y-2.5 text-sm text-primary-foreground/80">
               {quickLinks.map((l) => (
                 <li key={l.id}>
@@ -91,7 +91,7 @@ export default function Footer() {
 
           {/* Products */}
           <div>
-            <h4 className="font-display font-bold text-lg mb-4">Ürün Grupları</h4>
+            <div className="font-display font-bold text-lg mb-4 text-foreground">Ürün Grupları</div>
             <ul className="space-y-2.5 text-sm text-primary-foreground/80">
               {productLinks.map((l) => (
                 <li key={l}>
@@ -108,7 +108,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display font-bold text-lg mb-4">İletişim</h4>
+            <div className="font-display font-bold text-lg mb-4 text-foreground">İletişim</div>
             <div className="space-y-3 text-sm text-primary-foreground/80">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
