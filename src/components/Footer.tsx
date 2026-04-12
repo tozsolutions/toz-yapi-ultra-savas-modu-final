@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const quickLinks = [
   { label: "Hakkımızda", id: "about" },
@@ -7,6 +8,12 @@ const quickLinks = [
   { label: "Online Mağaza", id: "store" },
   { label: "Blog", id: "blog" },
   { label: "İletişim", id: "contact" },
+];
+
+const serviceLinks = [
+  { label: "Fiyat Hesaplayıcı", path: "/teklif-hesapla" },
+  { label: "7/24 Teknik Destek", path: "/teknik-destek" },
+  { label: "Sizi Arayalım", path: "/sizi-arayalim" },
 ];
 
 const productLinks = [
@@ -68,6 +75,17 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+            <div className="mt-4 space-y-2.5">
+              {serviceLinks.map((l) => (
+                <Link
+                  key={l.path}
+                  to={l.path}
+                  className="block text-sm text-primary hover:underline"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Products */}
