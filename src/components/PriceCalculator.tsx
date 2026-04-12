@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, type ChangeEvent } from "react";
 import {
   Calculator,
   Phone,
@@ -9,7 +9,16 @@ import {
   Ruler,
   Sparkles,
   MessageCircle,
+  User,
+  Mail,
+  FileText,
+  Send,
+  CheckCircle,
+  AlertCircle,
+  Eye,
+  ArrowLeft,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 type ProductType =
   | "Panjur"
@@ -73,6 +82,20 @@ function formatPrice(value: number): string {
   }).format(Math.round(value));
 }
 
+interface LeadFormData {
+  name: string;
+  phone: string;
+  email: string;
+  notes: string;
+  kvkkAccepted: boolean;
+}
+
+interface LeadFormErrors {
+  name?: string;
+  phone?: string;
+  kvkkAccepted?: string;
+}
+
 export default function PriceCalculator() {
   const [currentStep, setCurrentStep] = useState(1);
   const [productType, setProductType] = useState<ProductType | "">("");
@@ -85,6 +108,21 @@ export default function PriceCalculator() {
     ozel_renk: false,
   });
   const [location, setLocation] = useState<LocationType | "">("");
+
+  // Lead capture form state
+  const [showLeadForm, setShowLeadForm] = useState(false);
+  const [leadForm, setLeadForm] = useState<LeadFormData>({
+    name: "",
+    phone: "",
+    email: "",
+    notes: "",
+    kvkkAccepted: false,
+  });
+  const [leadErrors, setLeadErrors] = useState<LeadFormErrors>({});
+  const [leadSubmitted, setLeadSubmitted] = useState(false);
+  const [showSummary, setShowSummary] = useState(false);
+  const [kesifRequested, setKesifRequested] = useState(false);
+  const summaryRef = useRef<HTMLDivElement>(null);
 
   const toggleFeature = (key: string) => {
     setFeatures((prev) => ({ ...prev, [key]: !prev[key] }));
@@ -172,6 +210,66 @@ export default function PriceCalculator() {
       ozel_renk: false,
     });
     setLocation("");
+    setShowLeadForm(false);
+    setLeadForm({ name: "", phone: "", email: "", notes: "", kvkkAccepted: false });
+    setLeadErrors({});
+    setLeadSubmitted(false);
+    setShowSummary(false);
+    setKesifRequested(false);
+  };
+
+  const validatePhone = (phone: string): boolean => {
+    const cleaned = phone.replace(/\s/g, "");
+    return /^(\+90|0)?5\d{9}$/.test(cleaned);
+  };
+
+  const validateLeadForm = (): boolean => {
+    const errors: LeadFormErrors = {};
+    if (!leadForm.name.trim()) {
+      errors.name = "Ad Soyad zorunludur";
+    }
+    if (!leadForm.phone.trim()) {
+      errors.phone = "Telefon numarası zorunludur";
+    } else if (!validatePhone(leadForm.phone)) {
+      errors.phone = "Geçerli bir telefon numarası giriniz (örn: 05XX XXX XX XX)";
+    }
+    if (!leadForm.kvkkAccepted) {
+      errors.kvkkAccepted = "KVKK aydınlatma metnini onaylamanız gerekmektedir";
+    }
+    setLeadErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleLeadSubmit = () => {
+    if (!validateLeadForm()) return;
+    setLeadSubmitted(true);
+    const msg = getLeadWhatsAppMessage();
+    window.open(`https://wa.me/${whatsappNumber}?text=${msg}`, "_blank");
+  };
+
+  const handleKesifRequest = () => {
+    if (!validateLeadForm()) return;
+    setKesifRequested(true);
+    const msg = getKesifWhatsAppMessage();
+    window.open(`https://wa.me/${whatsappNumber}?text=${msg}`, "_blank");
+  };
+
+  const getSummaryData = () => {
+    const locationLabel = LOCATION_OPTIONS.find((l) => l.value === location)?.label || "";
+    const activeFeatures = Object.entries(features)
+      .filter(([, v]) => v)
+      .map(([k]) => {
+        const found = FEATURES.find((f) => f.key === k);
+        return found?.label;
+      })
+      .filter(Boolean) as string[];
+
+    let area = "";
+    if (productType !== "Otomatik Kapı" && width && height) {
+      area = `${width}m x ${height}m (${(parseFloat(width) * parseFloat(height)).toFixed(1)} m²)`;
+    }
+
+    return { locationLabel, activeFeatures, area };
   };
 
   const getWhatsAppMessage = () => {
@@ -204,6 +302,89 @@ export default function PriceCalculator() {
         `- Tahmini Fiyat: ${formatPrice(priceResult.min)} - ${formatPrice(priceResult.max)} TL`
       );
     }
+
+    return encodeURIComponent(lines.join("\n"));
+  };
+
+  const getLeadWhatsAppMessage = () => {
+    const { locationLabel, activeFeatures, area } = getSummaryData();
+    const lines = [
+      "Merhaba, fiyat hesaplayıcı üzerinden teklif almak istiyorum:",
+      "",
+      `- Ürün: ${productType}`,
+    ];
+
+    if (area) {
+      lines.push(`- Ölçüler: ${area}`);
+    }
+
+    if (activeFeatures.length > 0) {
+      lines.push(`- Özellikler: ${activeFeatures.join(", ")}`);
+    }
+
+    if (locationLabel) {
+      lines.push(`- Lokasyon: ${locationLabel}`);
+    }
+
+    if (priceResult) {
+      lines.push(
+        `- Tahmini Fiyat: ${formatPrice(priceResult.min)} - ${formatPrice(priceResult.max)} TL`
+      );
+    }
+
+    lines.push("");
+    lines.push("--- İletişim Bilgileri ---");
+    lines.push(`- Ad Soyad: ${leadForm.name}`);
+    lines.push(`- Telefon: ${leadForm.phone}`);
+    if (leadForm.email) {
+      lines.push(`- E-posta: ${leadForm.email}`);
+    }
+    if (leadForm.notes) {
+      lines.push(`- Notlar: ${leadForm.notes}`);
+    }
+
+    return encodeURIComponent(lines.join("\n"));
+  };
+
+  const getKesifWhatsAppMessage = () => {
+    const { locationLabel, activeFeatures, area } = getSummaryData();
+    const lines = [
+      "Merhaba, ücretsiz keşif talebinde bulunmak istiyorum:",
+      "",
+      `- Ürün: ${productType}`,
+    ];
+
+    if (area) {
+      lines.push(`- Ölçüler: ${area}`);
+    }
+
+    if (activeFeatures.length > 0) {
+      lines.push(`- Özellikler: ${activeFeatures.join(", ")}`);
+    }
+
+    if (locationLabel) {
+      lines.push(`- Lokasyon: ${locationLabel}`);
+    }
+
+    if (priceResult) {
+      lines.push(
+        `- Tahmini Fiyat: ${formatPrice(priceResult.min)} - ${formatPrice(priceResult.max)} TL`
+      );
+    }
+
+    lines.push("");
+    lines.push("--- İletişim Bilgileri ---");
+    lines.push(`- Ad Soyad: ${leadForm.name}`);
+    lines.push(`- Telefon: ${leadForm.phone}`);
+    if (leadForm.email) {
+      lines.push(`- E-posta: ${leadForm.email}`);
+    }
+    if (leadForm.notes) {
+      lines.push(`- Notlar: ${leadForm.notes}`);
+    }
+
+    lines.push("");
+    lines.push("Ücretsiz keşif talebi oluşturuyorum.");
 
     return encodeURIComponent(lines.join("\n"));
   };
@@ -497,25 +678,249 @@ export default function PriceCalculator() {
             )}
 
             {/* CTA Buttons */}
-            {priceResult && currentStep === 4 && (
-              <div className="px-6 sm:px-8 pb-6 sm:pb-8">
+            {priceResult && currentStep === 4 && !showLeadForm && !leadSubmitted && !kesifRequested && (
+              <div className="px-6 sm:px-8 pb-6 sm:pb-8 space-y-3">
+                {/* Summary Toggle */}
+                <button
+                  type="button"
+                  onClick={() => setShowSummary(!showSummary)}
+                  className="w-full flex items-center justify-between px-5 py-3 rounded-xl text-sm font-medium border border-border hover:bg-accent/5 transition-all"
+                >
+                  <span className="flex items-center gap-2">
+                    <Eye className="w-4 h-4 text-primary" />
+                    Seçim Özeti {showSummary ? "Gizle" : "Göster"}
+                  </span>
+                  <ChevronRight className={`w-4 h-4 transition-transform ${showSummary ? "rotate-90" : ""}`} />
+                </button>
+
+                {/* Summary Card */}
+                {showSummary && (
+                  <div ref={summaryRef} className="bg-toz-cream border border-border rounded-xl p-5 space-y-3">
+                    <h4 className="font-bold text-foreground text-sm uppercase tracking-wider">Seçim Özeti</h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Ürün:</span>
+                        <span className="font-medium text-foreground">{productType}</span>
+                      </div>
+                      {getSummaryData().area && (
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Ölçüler:</span>
+                          <span className="font-medium text-foreground">{getSummaryData().area}</span>
+                        </div>
+                      )}
+                      {getSummaryData().activeFeatures.length > 0 && (
+                        <div className="flex justify-between">
+                          <span className="text-muted-foreground">Özellikler:</span>
+                          <span className="font-medium text-foreground">{getSummaryData().activeFeatures.join(", ")}</span>
+                        </div>
+                      )}
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Lokasyon:</span>
+                        <span className="font-medium text-foreground">{getSummaryData().locationLabel}</span>
+                      </div>
+                      <div className="border-t border-border pt-2 flex justify-between">
+                        <span className="text-muted-foreground">Tahmini Fiyat:</span>
+                        <span className="font-bold text-primary">{formatPrice(priceResult.min)} - {formatPrice(priceResult.max)} TL</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <a
-                    href={`https://wa.me/${whatsappNumber}?text=${getWhatsAppMessage()}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => setShowLeadForm(true)}
                     className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-semibold bg-green-600 text-white hover:bg-green-700 transition-all shadow-md hover:shadow-lg"
                   >
                     <MessageCircle className="w-5 h-5" />
                     WhatsApp ile Teklif Al
-                  </a>
-                  <a
-                    href="tel:+905441553151"
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowLeadForm(true);
+                      setTimeout(() => {
+                        document.getElementById("lead-kesif-section")?.scrollIntoView({ behavior: "smooth" });
+                      }, 100);
+                    }}
                     className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-semibold bg-primary text-white hover:bg-primary/90 transition-all shadow-md hover:shadow-lg"
                   >
                     <Phone className="w-5 h-5" />
                     Ücretsiz Keşif Talep Et
-                  </a>
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Lead Capture Form */}
+            {priceResult && currentStep === 4 && showLeadForm && !leadSubmitted && !kesifRequested && (
+              <div className="px-6 sm:px-8 pb-6 sm:pb-8 border-t border-border pt-6">
+                <button
+                  type="button"
+                  onClick={() => setShowLeadForm(false)}
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-5 transition-colors"
+                >
+                  <ArrowLeft className="w-4 h-4" />
+                  Geri Dön
+                </button>
+
+                <h3 className="text-lg font-bold text-foreground mb-1">Teklifinizi Oluşturun</h3>
+                <p className="text-sm text-muted-foreground mb-5">Bilgilerinizi bırakın, size en kısa sürede dönüş yapalım.</p>
+
+                <div className="space-y-4">
+                  {/* Name */}
+                  <div>
+                    <label htmlFor="lead-name" className="block text-sm font-medium text-foreground mb-1">
+                      <User className="w-4 h-4 inline mr-1" /> Ad Soyad <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id="lead-name"
+                      type="text"
+                      value={leadForm.name}
+                      onChange={(e) => setLeadForm((p) => ({ ...p, name: e.target.value }))}
+                      className={`w-full bg-muted rounded-lg px-4 py-2.5 text-sm text-foreground border outline-none transition-all ${
+                        leadErrors.name ? "border-red-400 focus:ring-2 focus:ring-red-300" : "border-border focus:ring-2 focus:ring-primary/30"
+                      }`}
+                      placeholder="Adınız Soyadınız"
+                    />
+                    {leadErrors.name && <p className="text-red-500 text-xs mt-1">{leadErrors.name}</p>}
+                  </div>
+
+                  {/* Phone */}
+                  <div>
+                    <label htmlFor="lead-phone" className="block text-sm font-medium text-foreground mb-1">
+                      <Phone className="w-4 h-4 inline mr-1" /> Telefon <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id="lead-phone"
+                      type="tel"
+                      value={leadForm.phone}
+                      onChange={(e) => setLeadForm((p) => ({ ...p, phone: e.target.value }))}
+                      className={`w-full bg-muted rounded-lg px-4 py-2.5 text-sm text-foreground border outline-none transition-all ${
+                        leadErrors.phone ? "border-red-400 focus:ring-2 focus:ring-red-300" : "border-border focus:ring-2 focus:ring-primary/30"
+                      }`}
+                      placeholder="05XX XXX XX XX"
+                    />
+                    {leadErrors.phone && <p className="text-red-500 text-xs mt-1">{leadErrors.phone}</p>}
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label htmlFor="lead-email" className="block text-sm font-medium text-foreground mb-1">
+                      <Mail className="w-4 h-4 inline mr-1" /> E-posta <span className="text-muted-foreground text-xs">(opsiyonel)</span>
+                    </label>
+                    <input
+                      id="lead-email"
+                      type="email"
+                      value={leadForm.email}
+                      onChange={(e) => setLeadForm((p) => ({ ...p, email: e.target.value }))}
+                      className="w-full bg-muted rounded-lg px-4 py-2.5 text-sm text-foreground border border-border outline-none focus:ring-2 focus:ring-primary/30 transition-all"
+                      placeholder="ornek@email.com"
+                    />
+                  </div>
+
+                  {/* Notes */}
+                  <div>
+                    <label htmlFor="lead-notes" className="block text-sm font-medium text-foreground mb-1">
+                      <FileText className="w-4 h-4 inline mr-1" /> Notlar <span className="text-muted-foreground text-xs">(opsiyonel)</span>
+                    </label>
+                    <textarea
+                      id="lead-notes"
+                      value={leadForm.notes}
+                      onChange={(e) => setLeadForm((p) => ({ ...p, notes: e.target.value }))}
+                      className="w-full bg-muted rounded-lg px-4 py-2.5 text-sm text-foreground border border-border outline-none focus:ring-2 focus:ring-primary/30 transition-all resize-none"
+                      rows={3}
+                      placeholder="Eklemek istediğiniz notlar..."
+                    />
+                  </div>
+
+                  {/* KVKK Consent */}
+                  <div>
+                    <label className="flex items-start gap-3 cursor-pointer group">
+                      <input
+                        type="checkbox"
+                        checked={leadForm.kvkkAccepted}
+                        onChange={(e) => setLeadForm((p) => ({ ...p, kvkkAccepted: e.target.checked }))}
+                        className="mt-1 w-4 h-4 rounded border-border text-primary focus:ring-primary/30"
+                      />
+                      <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">
+                        <a href="/kvkk" target="_blank" className="text-primary underline hover:text-primary/80">KVKK aydınlatma metnini</a> okudum,
+                        kişisel verilerimin işlenmesini kabul ediyorum. <span className="text-red-500">*</span>
+                      </span>
+                    </label>
+                    {leadErrors.kvkkAccepted && <p className="text-red-500 text-xs mt-1">{leadErrors.kvkkAccepted}</p>}
+                  </div>
+
+                  {/* Submit Buttons */}
+                  <div className="space-y-3 pt-2" id="lead-kesif-section">
+                    <Button
+                      type="button"
+                      onClick={handleLeadSubmit}
+                      className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl shadow-md"
+                    >
+                      <MessageCircle className="w-5 h-5 mr-2" />
+                      WhatsApp ile Teklif Al
+                    </Button>
+                    <Button
+                      type="button"
+                      onClick={handleKesifRequest}
+                      className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 rounded-xl shadow-md"
+                    >
+                      <Phone className="w-5 h-5 mr-2" />
+                      Ücretsiz Keşif Talep Et
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Lead Submitted Success */}
+            {leadSubmitted && (
+              <div className="px-6 sm:px-8 pb-6 sm:pb-8 border-t border-border pt-6">
+                <div className="text-center py-6">
+                  <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold text-gradient-gold mb-2">Talebiniz WhatsApp Üzerinden Gönderildi!</h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    Uzman ekibimiz en kısa sürede sizinle iletişime geçecektir.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowLeadForm(false);
+                      setLeadSubmitted(false);
+                    }}
+                    className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline"
+                  >
+                    <ArrowLeft className="w-4 h-4" />
+                    Yeni Hesaplama Yap
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Keşif Requested Success */}
+            {kesifRequested && (
+              <div className="px-6 sm:px-8 pb-6 sm:pb-8 border-t border-border pt-6">
+                <div className="text-center py-6">
+                  <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold text-gradient-gold mb-2">Ücretsiz Keşif Talebiniz Alındı!</h3>
+                  <p className="text-muted-foreground text-sm mb-1">
+                    WhatsApp üzerinden detaylar gönderildi.
+                  </p>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    Uzman ekibimiz sizi arayarak keşif tarihi belirleyecektir.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setKesifRequested(false);
+                      setShowLeadForm(false);
+                    }}
+                    className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:underline"
+                  >
+                    <ArrowLeft className="w-4 h-4" />
+                    Yeni Hesaplama Yap
+                  </button>
                 </div>
               </div>
             )}
