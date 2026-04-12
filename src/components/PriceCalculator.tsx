@@ -670,9 +670,14 @@ export default function PriceCalculator() {
                   <p className="text-3xl sm:text-4xl font-display font-bold text-gradient-purple mb-2">
                     {formatPrice(priceResult.min)} TL - {formatPrice(priceResult.max)} TL
                   </p>
-                  <p className="text-xs text-muted-foreground">
-                    * Bu fiyatlar tahmini olup, kesin fiyat için keşif ve detaylı analiz gerekmektedir.
-                  </p>
+                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mt-3">
+                    <p className="text-amber-800 text-xs font-medium">
+                      ⚠️ Bu fiyatlar tahmini olup, proje detaylarına göre değişebilir.
+                    </p>
+                    <p className="text-amber-700 text-xs mt-1">
+                      Net fiyat için ücretsiz keşif talep edin.
+                    </p>
+                  </div>
                 </div>
               </div>
             )}
@@ -680,6 +685,17 @@ export default function PriceCalculator() {
             {/* CTA Buttons */}
             {priceResult && currentStep === 4 && !showLeadForm && !leadSubmitted && !kesifRequested && (
               <div className="px-6 sm:px-8 pb-6 sm:pb-8 space-y-3">
+                {/* Direct WhatsApp CTA */}
+                <a
+                  href={`https://wa.me/${whatsappNumber}?text=${getWhatsAppMessage()}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 px-5 py-4 rounded-xl text-base font-bold bg-green-600 text-white hover:bg-green-700 transition-all shadow-lg hover:shadow-xl"
+                >
+                  <MessageCircle className="w-6 h-6" />
+                  Hemen WhatsApp ile Net Fiyat Alın
+                </a>
+
                 {/* Summary Toggle */}
                 <button
                   type="button"
@@ -765,7 +781,14 @@ export default function PriceCalculator() {
                 </button>
 
                 <h3 className="text-lg font-bold text-foreground mb-1">Teklifinizi Oluşturun</h3>
-                <p className="text-sm text-muted-foreground mb-5">Bilgilerinizi bırakın, size en kısa sürede dönüş yapalım.</p>
+                <p className="text-sm text-muted-foreground mb-5">
+                  Bilgilerinizi bırakın, WhatsApp üzerinden size en kısa sürede dönüş yapalım.
+                </p>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-5">
+                  <p className="text-blue-800 text-xs">
+                    💡 Gönder butonuna bastığınızda WhatsApp açılacak ve hazırladığınız teklif mesajı otomatik doldurulacaktır.
+                  </p>
+                </div>
 
                 <div className="space-y-4">
                   {/* Name */}
@@ -880,8 +903,20 @@ export default function PriceCalculator() {
                 <div className="text-center py-6">
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-gradient-gold mb-2">Talebiniz WhatsApp Üzerinden Gönderildi!</h3>
-                  <p className="text-muted-foreground text-sm mb-4">
+                  <p className="text-muted-foreground text-sm mb-2">
                     Uzman ekibimiz en kısa sürede sizinle iletişime geçecektir.
+                  </p>
+                  <p className="text-muted-foreground text-xs mb-4">
+                    WhatsApp açılmadıysa,{' '}
+                    <a
+                      href={`https://wa.me/${whatsappNumber}?text=${getLeadWhatsAppMessage()}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-600 font-medium hover:underline"
+                    >
+                      buraya tıklayarak
+                    </a>{' '}
+                    tekrar deneyin.
                   </p>
                   <button
                     type="button"
