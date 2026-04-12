@@ -13,6 +13,7 @@ import AdminDashboard from "./pages/admin/Dashboard.tsx";
 import TeklifHesapla from "./pages/TeklifHesapla.tsx";
 import TeknikDestek from "./pages/TeknikDestek.tsx";
 import CallbackPage from "./pages/CallbackPage.tsx";
+import Katalog from "./pages/Katalog.tsx";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
               <Route path="/teklif-hesapla" element={<TeklifHesapla />} />
               <Route path="/teknik-destek" element={<TeknikDestek />} />
               <Route path="/sizi-arayalim" element={<CallbackPage />} />
+              <Route path="/katalog" element={<Katalog />} />
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

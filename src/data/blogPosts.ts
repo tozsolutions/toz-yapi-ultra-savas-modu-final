@@ -225,6 +225,255 @@ Standart modüller ile farklı boyutlarda kombinasyon imkanı. Genişletilebilir
 
 Modüler yapı teknolojileri hakkında daha fazla bilgi almak için Toz Yapı teknik ekibiyle iletişime geçin.`,
   },
+  // ===== NEW POSTS FROM MorSite BLOG FILES =====
+  {
+    slug: "gunes-kirici-sistemlerde-surdurulebilirlik-2026",
+    title: "Güneş Kırıcı Sistemlerde Sürdürülebilirlik: Geleceğin Yeşil Binaları İçin Akıllı Çözümler",
+    desc: "Güneş kırıcı sistemlerin enerji tasarrufu potansiyeli, LEED/BREEAM sertifikasyonlarına katkısı ve karbon ayak izi azaltımı hakkında kapsamlı rehber.",
+    tag: "Sürdürülebilirlik",
+    date: "Mart 2026",
+    readTime: "8 dk",
+    content: `Güneş kırıcı sistemler, bina cephelerine entegre edilen ve doğrudan güneş ışınlarını kontrol ederek iç mekan sıcaklığını düzenleyen mimari elemanlardır. Temel çalışma prensibi, yaz aylarında güneşin yüksek açılı ışınlarını bloke ederken, kış aylarında düşük açılı güneş ışığının içeri girmesine izin vermektir.
+
+## Enerji Tasarrufu Potansiyeli
+
+Avrupa'da yapılan bağımsız araştırmalar, doğru tasarlanmış güneş kırıcı sistemlerin:
+- **Soğutma maliyetlerinde %40-60 azalma** (sıcak iklimlerde)
+- **Isıtma maliyetlerinde %10-15 tasarruf** (pasif güneş kazancı ile)
+- **Aydınlatma maliyetlerinde %20-40 elektrik tasarrufu** (gün ışığı optimizasyonu)
+- **Toplam enerji tüketiminde %25-45 azalma**
+
+## Yeşil Bina Sertifikasyonlarına Katkı
+
+Güneş kırıcı sistemler LEED, BREEAM ve Passivhaus sertifikalarına doğrudan katkı sağlar:
+- **LEED**: 3-8 kredi puanı (Energy & Atmosphere, Daylight and Views)
+- **BREEAM**: İyi-Mükemmel seviye yükselişi (Visual Comfort, Energy)
+- **Passivhaus**: Yıllık ısıtma/soğutma talebi ≤15 kWh/m² yıl hedefine destek
+
+## Karbon Ayak İzi Azaltımı
+
+Bir güneş kırıcı sisteminin 50 yıllık yaşam döngüsünde:
+- Enerji tasarrufu: 150-250 kg CO₂/m²/yıl
+- 50 yılda: 7.500-12.500 kg CO₂/m² tasarruf
+- Net karbon farkı: 7.000+ kg CO₂/m² pozitif etki
+
+## Vaka Analizi: Ofis Binası, Ankara
+
+5.000 m² ofis binası, dikey alüminyum güneş kırıcı:
+- Yatırım: 8.5 milyon TL
+- Yıllık enerji tasarrufu: 1.4 milyon TL
+- Geri dönüş: 6.1 yıl
+- CO₂ azaltımı: 180 ton/yıl
+
+## Toz Yapı Olarak
+
+Size özel güneş kırıcı çözümleri sunuyoruz: ücretsiz keşif ve enerji analizi, BIM uyumlu teknik çizimler, LEED danışmanlık desteği ve 10 yıl garanti.`,
+  },
+  {
+    slug: "mimari-tasarimda-brise-soleil-2026",
+    title: "Mimari Tasarımda Brise Soleil: Estetik ve Fonksiyonun Mükemmel Uyumu",
+    desc: "Le Corbusier'den günümüze brise soleil sistemlerinin tarihsel gelişimi, tasarım prensipleri, malzeme seçenekleri ve dünyadan ikonik uygulama örnekleri.",
+    tag: "Mimari",
+    date: "Mart 2026",
+    readTime: "10 dk",
+    content: `Le Corbusier tarafından 1930'larda popüler hale getirilen "brise soleil" (Fransızca: güneş kırıcı), modern mimarinin en ikonik ve işlevsel unsurlarından biri olmuştur. Bugün, 21. yüzyılın teknolojik imkanları ile birleşen bu sistem, sadece güneş kontrolü değil, aynı zamanda bina kimliği oluşturan estetik bir ifade aracıdır.
+
+## Tarihsel Gelişim
+
+**Erken Dönem (1930-1950)**: Villa Savoye, Cité de Refuge ve Ministry of Education gibi projelerde betonarme lameller ve sabit açılı tasarım.
+
+**Modern Dönem (1950-1980)**: Alüminyum devrimi ile hafiflik, ekstrüzyon teknolojisi ve anodize yüzeyler. UN Headquarters, Marina City, Sydney Opera House.
+
+**Çağdaş Dönem (1980-Günümüz)**: Hareketli/dinamik sistemler, akıllı otomasyon, parametrik tasarım ve BIM entegrasyonu.
+
+## Sistem Tipleri
+
+1. **Yatay Lamelli Sistemler**: Güney cepheler için ideal, basit ve ekonomik, soğutma yükünde yüksek performans.
+2. **Dikey Lamelli Sistemler**: Doğu ve batı cepheler için etkili, düşük açı güneş kontrolü, modern estetik.
+3. **Egg-Crate (Yumurta Kolisi) Sistem**: 3 boyutlu güneş kontrolü, derinlik ve doku, ikonik mimari.
+4. **Dinamik/Hareketli Sistemler**: Optimum yıl boyu performans, kullanıcı kontrolü, maksimum enerji tasarrufu.
+
+## Malzeme Karşılaştırması
+
+- **Alüminyum**: Hafif (2.7 g/cm³), korozyon direnci mükemmel, 40-50 yıl ömür, orta-yüksek maliyet.
+- **Paslanmaz Çelik**: Çok güçlü (500-900 MPa), 50-60 yıl ömür, yüksek maliyet.
+- **Ahşap**: Doğal izolator, sıcak görünüm, 20-30 yıl ömür (bakımla 40+), yüksek bakım gereksinimi.
+- **Kompozitler**: Özelleştirilmiş özellikler, kompleks formlar, 30-40 yıl ömür.
+
+## İkonik Projeler
+
+- **Institut du Monde Arabe, Paris** (Jean Nouvel, 1987): Fotoelektrikli metal panjurlar, Arap geometrik desenleri.
+- **One Angel Square, Manchester** (3XN, 2013): BREEAM Outstanding, %75 enerji azaltımı.
+- **Louvre Abu Dhabi** (Jean Nouvel, 2017): 180 m çap kubbe, "ışık yağmuru" efekti.
+- **SAP Türkiye Plaza, İstanbul** (Tabanlıoğlu Mimarlık): LEED Gold sertifikası.
+
+## Toz Yapı Teknolojileri Olarak
+
+Ücretsiz konsept tasarım, güneş analizi, 3D görselleştirme, teknik danışmanlık, anahtar teslim uygulama ve 10 yıl garanti sunuyoruz.`,
+  },
+  {
+    slug: "moduler-insaat-teknolojileri-2026",
+    title: "Modüler İnşaat Teknolojileri: Geleceğin Yapı Sistemleri Bugün",
+    desc: "Modüler inşaatın temel prensipleri, geleneksel yöntemlere göre avantajları ve TOZ Yapı'nın modüler güneş kırıcı ve cephe sistemlerindeki yenilikçi yaklaşımı.",
+    tag: "Teknoloji",
+    date: "Mart 2026",
+    readTime: "9 dk",
+    content: `İnşaat sektörü, geleneksel yöntemlerin yol açtığı zaman aşımı, maliyet artışı ve kalite kontrol sorunlarına alternatif olarak modüler inşaata yöneliyor. TOZ Yapı Teknolojileri olarak, güneş kırıcı ve cephe sistemlerimizde modüler prensipleri uygulayarak müşterilerimize daha hızlı, ekonomik ve güvenilir çözümler sunuyoruz.
+
+## Modüler İnşaat Nedir?
+
+Modüler inşaat, yapı bileşenlerinin kontrollü fabrika ortamında üretilip sahada hızlıca monte edilmesini esas alan bir yapı yöntemidir. Bu yaklaşım, inşaat sektöründe verimliliği ve kaliteyi önemli ölçüde artırır.
+
+## Geleneksel vs. Modüler Karşılaştırması
+
+- **Hız**: Fabrika üretimi ve paralel saha çalışmaları ile proje süresi %40-60 kısalır.
+- **Kalite**: Kontrollü fabrika ortamında hassas üretim, tutarlı kalite.
+- **Atık**: İnşaat atığında %70-80 azalma, sürdürülebilirlik hedeflerine katkı.
+- **Maliyet**: Toplu üretim ve işçilik optimizasyonu ile %15-25 maliyet avantajı.
+- **Güvenlik**: Sahada daha az işçi, daha az kaza riski.
+
+## Uygulama Alanları
+
+- Konut projeleri (modüler apartmanlar, villa kompleksleri)
+- Ticari binalar (ofis modülleri, showroom)
+- Eğitim ve sağlık yapıları
+- Endüstriyel tesisler
+
+## Toz Yapı Modüler Sistemleri
+
+### Pergola Sistemleri
+Modüler alüminyum profil sistemi ile sahada hızlı montaj. Standart ve özel ölçülerde üretim, genişletilebilir yapı.
+
+### Güneş Kırıcı Sistemleri
+Fabrika öncesi hazırlanmış lamel modülleri, sahada minimum montaj süresi. BIM entegrasyonu ile proje koordinasyonu.
+
+### Kış Bahçesi
+Fabrikada kesilmiş ve işlenmiş profiller, sahada birleştirilerek kısa sürede tamamlanır.
+
+## Gelecek Trendleri
+
+- **3D baskı**: Beton ve polimer bazlı yapı elemanları
+- **Robotik montaj**: Otonom montaj sistemleri
+- **Dijital ikiz**: BIM entegrasyonu ile sanal model ve performans simülasyonu
+- **Sürdürülebilir malzemeler**: Geri dönüşümlü ve bio-bazlı malzemeler
+
+Modüler yapı teknolojileri hakkında daha fazla bilgi almak için TOZ Yapı teknik ekibiyle iletişime geçin.`,
+  },
+  {
+    slug: "akilli-golgeleme-enerji-maliyetleri",
+    title: "Akıllı Gölgeleme ile Enerji Maliyetlerini Nasıl Düşürürsünüz?",
+    desc: "Akıllı gölgeleme teknolojilerinin çalışma prensipleri, enerji tasarrufu mekanizmaları, gerçek proje verileri ve yatırım geri dönüş hesaplamaları.",
+    tag: "Enerji",
+    date: "Mart 2026",
+    readTime: "8 dk",
+    content: `Enerji maliyetleri tüm dünyada artarken, bina sahipleri ve işletmeciler operasyonel giderleri düşürmenin yollarını arıyor. İşte tam bu noktada, akıllı gölgeleme sistemleri %30-50'ye varan soğutma maliyeti azaltımı sunarak hızlı ROI (Return on Investment) sağlıyor.
+
+## Akıllı Gölgeleme Nedir?
+
+Akıllı gölgeleme, geleneksel sabit gölgeleme sistemlerinin aksine, sensörler ve otomasyon teknolojileri kullanarak gerçek zamanlı olarak ortam koşullarına uyum sağlayan dinamik bir sistemdir.
+
+## Geleneksel Sistemlerden Farkı
+
+| Özellik | Geleneksel | Akıllı |
+|---|---|---|
+| Kontrol | Manuel | Otomatik |
+| Enerji tasarrufu | %15-25 | %30-50 |
+| Kullanıcı konforu | Sabit | Dinamik |
+| Bakım | Düşük | Orta |
+| Yatırım maliyeti | Düşük | Orta-Yüksek |
+
+## Enerji Tasarrufu Mekanizmaları
+
+1. **Güneş Isı Kazancı Kontrolü**: Yaz aylarında güneş ışınları bloke edilir, kışın içeri yönlendirilir.
+2. **Doğal Havalandırma Optimizasyonu**: Rüzgar yönü ve hızına göre otomatik konumlanma.
+3. **Gün Işığı Yönlendirme**: Yapay aydınlatma ihtiyacını azaltan akıllı ışık yönetimi.
+4. **HVAC Entegrasyonu**: Bina otomasyon sistemi ile koordineli çalışma.
+
+## Sensör ve Otomasyon Sistemleri
+
+- **Güneş ışınımı sensörü**: Işık yoğunluğuna göre otomatik ayarlama
+- **Sıcaklık ve nem sensörü**: İç/dış ortam koşullarını izleme
+- **Rüzgar sensörü**: Şiddetli rüzgarda koruma pozisyonu
+- **Occupancy detection**: Kullanıcı varlığına göre optimizasyon
+- **Bina Otomasyon Protokolleri**: KNX, BACnet, DALI entegrasyonu
+
+## Gerçek Proje Verileri
+
+**Alışveriş Merkezi - İzmir**: 25.000 m² cephe, dinamik yatay lamel + sensör
+- Yatırım: 42 milyon TL
+- Yıllık enerji tasarrufu: 8.2 milyon TL
+- Geri dönüş: 5.1 yıl
+- Soğutma yükü azalması: %52
+
+**Hastane - Antalya**: 12.000 m² hasta odaları, motorlu dış jaluzi
+- Hasta konforu: %45 iyileşme
+- Göz kamaştırma şikayetleri: %70 azalma
+
+## Yatırım Geri Dönüş Hesaplaması
+
+Tipik bir ticari bina projesi için:
+- Basit sistemler: 4-7 yıl geri dönüş
+- Orta seviye otomasyon: 6-9 yıl geri dönüş
+- İleri otomasyon: 8-12 yıl geri dönüş
+
+Ek faydalar: Mülk değerinde %5-10 artış, HVAC ekipman ömründe 3-5 yıl uzama.`,
+  },
+  {
+    slug: "pergola-sistemlerinde-son-teknolojiler-2026",
+    title: "Pergola Sistemlerinde Son Teknolojiler: Bioclimatic'ten Akıllı Otomasyona",
+    desc: "2026 yılı pergola teknolojilerindeki son yenilikler, bioclimatic sistemler, güneş enerjisi entegrasyonu, IoT kontrol ve TOZ Yapı'nın yeni nesil ürün gamı.",
+    tag: "Ürün İnceleme",
+    date: "Mart 2026",
+    readTime: "7 dk",
+    content: `Pergola sistemleri son 10 yılda dramatik bir evrim geçirdi. Basit ahşap yapılardan, bugün AI destekli, kendi enerjisini üreten, hava koşullarına otomatik uyum sağlayan high-tech yaşam alanlarına dönüştü.
+
+## Pergola Evrimi: Dünden Bugüne
+
+**Geleneksel Pergola**: Ahşap kirişler, sabit yapı, temel gölgeleme.
+**Modern Pergola**: Alüminyum profiller, motorlu lameller, entegre aydınlatma.
+**Bioclimatic Pergola**: İklim yanıtı veren, sensör destekli, akıllı sistemler.
+**AI Pergola**: Yapay zeka optimizasyonu, enerji üretimi, bulut bağlantılı.
+
+## Bioclimatic Sistemler
+
+Bioclimatic pergola, dış ortam koşullarına otomatik uyum sağlayan akıllı bir dış mekan yapısıdır:
+- Hareketli alüminyum lameller (0-135 derece rotasyon)
+- Entegre yağmur ve rüzgar sensörleri
+- Otomatik sıcaklık ve nem regülasyonu
+- Dahili LED aydınlatma sistemi
+
+## Akıllı Otomasyon Özellikleri
+
+- **Güneş takibi**: Güneş açısına göre lameller otomatik optimize edilir
+- **Yağmur koruması**: Yağmur algılandığında lameller kapanır
+- **Rüzgar güvenliği**: Belirli rüzgar hızında otomatik emniyet pozisyonu
+- **Program modu**: Günlük/haftalık zamanlama senaryoları
+- **Uzaktan erişim**: Mobil uygulama ile her yerden kontrol
+
+## Güneş Enerjisi Entegrasyonu
+
+Güneş paneli entegrasyonlu pergola modelleri:
+- Lamel üstüne monte BIPV (Building Integrated Photovoltaics)
+- 20 m² pergola alanı ile yıllık 3.000 kWh enerji üretimi
+- Akü depolama veya şebeke bağlantısı seçeneği
+- Kendi kendine yeten sistem (şebeke bağımsız)
+
+## Hava Sensörü Sistemleri
+
+- Güneş ışınımı sensörü
+- Dış sıcaklık sensörü
+- Rüzgar hızı ve yönü ölçümü
+- Yağmur dedektörü
+- Nem sensörü
+
+## TOZ Yapı Yeni Nesil Pergolalar
+
+TOZ Yapı olarak Somfy motorlu otomasyon sistemleri ve Alumil profilleri kullanarak premium kalitede bioclimatic pergola ve rolling roof sistemleri kuruyoruz:
+- Ücretsiz keşif ve proje çizimi
+- BIM uyumlu teknik planlama
+- 10 yıl garanti
+- Satış sonrası teknik servis desteği`,
+  },
 ];
 
 export function getBlogBySlug(slug: string): BlogPost | undefined {

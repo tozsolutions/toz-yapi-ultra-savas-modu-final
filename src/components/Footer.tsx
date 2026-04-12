@@ -14,6 +14,7 @@ const serviceLinks = [
   { label: "Fiyat Hesaplayıcı", path: "/teklif-hesapla" },
   { label: "7/24 Teknik Destek", path: "/teknik-destek" },
   { label: "Sizi Arayalım", path: "/sizi-arayalim" },
+  { label: "E-Katalog", path: "/katalog" },
 ];
 
 const productLinks = [
