@@ -32,17 +32,22 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <img src="/images/logos/tozyapi-logo.webp?v=6" alt="Toz Yapı Teknolojileri" className="h-16 mb-4 object-contain" width="120" height="40" loading="lazy" decoding="async" />
-            <p className="text-primary-foreground/70 text-sm leading-relaxed">
+            <p className="text-primary-foreground/80 text-sm leading-relaxed">
               2008'den bu yana yapı teknolojileri sektöründe yenilikçi ve kaliteli çözümler sunan güvenilir markadır.
             </p>
             <div className="flex gap-3 mt-5">
-              {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
+              {[
+                { Icon: Facebook, label: "Facebook" },
+                { Icon: Instagram, label: "Instagram" },
+                { Icon: Twitter, label: "Twitter" },
+                { Icon: Linkedin, label: "LinkedIn" }
+              ].map(({ Icon, label }, i) => (
                 <button
                   key={i}
                   className="w-9 h-9 rounded-lg bg-primary-foreground/10 hover:bg-primary/60 flex items-center justify-center transition-colors cursor-pointer"
-                  aria-label="Sosyal medya"
+                  aria-label={label}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-4 h-4" aria-hidden="true" />
                 </button>
               ))}
             </div>
@@ -51,7 +56,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="font-display font-bold text-lg mb-4">Hızlı Bağlantılar</h4>
-            <ul className="space-y-2.5 text-sm text-primary-foreground/70">
+            <ul className="space-y-2.5 text-sm text-primary-foreground/80">
               {quickLinks.map((l) => (
                 <li key={l.id}>
                   <button
@@ -68,7 +73,7 @@ export default function Footer() {
           {/* Products */}
           <div>
             <h4 className="font-display font-bold text-lg mb-4">Ürün Grupları</h4>
-            <ul className="space-y-2.5 text-sm text-primary-foreground/70">
+            <ul className="space-y-2.5 text-sm text-primary-foreground/80">
               {productLinks.map((l) => (
                 <li key={l}>
                   <button
@@ -85,7 +90,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="font-display font-bold text-lg mb-4">İletişim</h4>
-            <div className="space-y-3 text-sm text-primary-foreground/70">
+            <div className="space-y-3 text-sm text-primary-foreground/80">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <span>Timko İş Merkezi, Çamlıca Mah. Anadolu Bulvarı, Ğ Blok, İdil Sok. V8, Kat 1, 06200 Yenimahalle/Ankara</span>

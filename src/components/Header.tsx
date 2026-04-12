@@ -131,8 +131,9 @@ export default function Header() {
               size="icon"
               className={`xl:hidden ${isScrolled ? "text-foreground" : "text-primary-foreground"}`}
               onClick={() => setIsMobileOpen(!isMobileOpen)}
+              aria-label={isMobileOpen ? "Menüyü kapat" : "Menüyü aç"}
             >
-              {isMobileOpen ? <X /> : <Menu />}
+              {isMobileOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
             </Button>
           </div>
         </div>

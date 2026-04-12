@@ -93,9 +93,10 @@ export default function HeroSection() {
               onClick={() =>
                 document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })
               }
+              aria-label="Ürünleri keşfetmek için tıkla"
             >
               Ürünleri Keşfet
-              <ChevronRight className="w-5 h-5 ml-2" />
+              <ChevronRight className="w-5 h-5 ml-2" aria-hidden="true" />
             </Button>
             <Button
               size="lg"
@@ -104,6 +105,7 @@ export default function HeroSection() {
               onClick={() =>
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
               }
+              aria-label="Teklif almak için tıkla"
             >
               Teklif Al
             </Button>
