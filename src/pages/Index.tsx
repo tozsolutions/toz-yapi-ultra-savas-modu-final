@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ProductsSection from "@/components/ProductsSection";
 import ScrollToTop from "@/components/ScrollToTop";
+import StickyMobileCTA from "@/components/StickyMobileCTA";
 
 const ReferencesSection = lazy(() => import("@/components/ReferencesSection"));
 const StoreSection = lazy(() => import("@/components/StoreSection"));
@@ -48,6 +49,7 @@ const Index = () => {
         </Suspense>
       )}
       <ScrollToTop />
+      <StickyMobileCTA />
     </div>
   );
 };
