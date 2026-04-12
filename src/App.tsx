@@ -15,6 +15,13 @@ import TeknikDestek from "./pages/TeknikDestek.tsx";
 import CallbackPage from "./pages/CallbackPage.tsx";
 import Katalog from "./pages/Katalog.tsx";
 import DistrictService from "./pages/DistrictService.tsx";
+import NedenBiz from "./pages/NedenBiz.tsx";
+import Garanti from "./pages/Garanti.tsx";
+import Surecimiz from "./pages/Surecimiz.tsx";
+import Projeler from "./pages/Projeler.tsx";
+import CompareSomfyBecker from "./pages/CompareSomfyBecker.tsx";
+import ComparePergolaTente from "./pages/ComparePergolaTente.tsx";
+import CompareKepenkPanjur from "./pages/CompareKepenkPanjur.tsx";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +42,13 @@ const App = () => (
               <Route path="/sizi-arayalim" element={<CallbackPage />} />
               <Route path="/katalog" element={<Katalog />} />
               <Route path="/:district/:service" element={<DistrictService />} />
+              <Route path="/neden-biz" element={<NedenBiz />} />
+              <Route path="/garanti" element={<Garanti />} />
+              <Route path="/surecimiz" element={<Surecimiz />} />
+              <Route path="/projeler" element={<Projeler />} />
+              <Route path="/karsilastirma/somfy-vs-becker" element={<CompareSomfyBecker />} />
+              <Route path="/karsilastirma/pergola-vs-tente" element={<ComparePergolaTente />} />
+              <Route path="/karsilastirma/kepenk-vs-panjur" element={<CompareKepenkPanjur />} />
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

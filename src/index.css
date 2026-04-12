@@ -215,3 +215,12 @@ html {
 .hero-cta-glow {
   animation: cta-glow 3s ease-in-out infinite;
 }
+
+/* WhatsApp float button pulse */
+@keyframes whatsapp-float-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(142 76% 36% / 0.5); }
+  50% { box-shadow: 0 0 0 12px hsl(142 76% 36% / 0); }
+}
+.whatsapp-float-pulse {
+  animation: whatsapp-float-pulse 2s infinite;
+}

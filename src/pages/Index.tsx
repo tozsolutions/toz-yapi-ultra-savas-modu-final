@@ -5,6 +5,8 @@ import AboutSection from "@/components/AboutSection";
 import ProductsSection from "@/components/ProductsSection";
 import ScrollToTop from "@/components/ScrollToTop";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const ReferencesSection = lazy(() => import("@/components/ReferencesSection"));
 const StoreSection = lazy(() => import("@/components/StoreSection"));
@@ -50,6 +52,8 @@ const Index = () => {
       )}
       <ScrollToTop />
       <StickyMobileCTA />
+      <WhatsAppFloat />
+      <ExitIntentPopup />
     </div>
   );
 };
