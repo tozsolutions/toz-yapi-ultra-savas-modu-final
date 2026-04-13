@@ -75,13 +75,14 @@ export default function Header() {
     >
       <div className="toz-container">
         <div className="flex items-center justify-between h-20">
-          <button onClick={() => scrollTo("home")} className="flex items-center gap-3">
+          <button onClick={() => scrollTo("home")} className="flex items-center gap-3 relative">
+            {!isScrolled && (
+              <div className="absolute inset-0 rounded-lg bg-background/10 backdrop-blur-sm -z-10" />
+            )}
             <img
               src="/images/logos/tozyapi-logo.webp?v=6"
               alt="Toz Yapı Teknolojileri"
-              className={`h-16 w-auto drop-shadow-md transition-all ${
-                isScrolled ? "" : "brightness-0 invert"
-              }`}
+              className="h-16 w-auto object-contain opacity-100"
               width="120"
               height="40"
               loading="eager"
