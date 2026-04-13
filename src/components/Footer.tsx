@@ -7,6 +7,7 @@ const quickLinks = [
   { label: "Referanslar", id: "references" },
   { label: "Online Mağaza", id: "store" },
   { label: "Blog", id: "blog" },
+  { label: "E-Katalog", id: "catalog" },
   { label: "İletişim", id: "contact" },
 ];
 
@@ -14,7 +15,6 @@ const serviceLinks = [
   { label: "Fiyat Hesaplayıcı", path: "/teklif-hesapla" },
   { label: "7/24 Teknik Destek", path: "/teknik-destek" },
   { label: "Sizi Arayalım", path: "/sizi-arayalim" },
-  { label: "E-Katalog", path: "/katalog" },
 ];
 
 const productLinks = [

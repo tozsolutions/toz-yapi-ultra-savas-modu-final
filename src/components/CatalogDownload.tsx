@@ -17,7 +17,7 @@ const catalogs = [
 
 export default function CatalogDownload() {
   return (
-    <section className="toz-section bg-toz-cream">
+    <section id="catalog" className="toz-section bg-toz-cream">
       <div className="toz-container">
         <div className="text-center mb-12">
           <span className="text-sm md:text-base text-primary font-semibold uppercase tracking-widest">

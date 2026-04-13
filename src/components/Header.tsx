@@ -13,6 +13,7 @@ const navItems = [
   { id: "blog", label: "Blog" },
   { id: "faq", label: "S.S.S" },
   { id: "partners", label: "İş Ortakları" },
+  { id: "catalog", label: "E-Katalog" },
   { id: "contact", label: "İletişim" },
 ];
 

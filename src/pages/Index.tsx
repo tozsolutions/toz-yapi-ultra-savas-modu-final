@@ -15,6 +15,7 @@ const StoreSection = lazy(() => import("@/components/StoreSection"));
 const BlogSection = lazy(() => import("@/components/BlogSection"));
 const FAQSection = lazy(() => import("@/components/FAQSection"));
 const PartnersSection = lazy(() => import("@/components/PartnersSection"));
+const CatalogSection = lazy(() => import("@/components/CatalogDownload"));
 const PergoCleanSection = lazy(() => import("@/components/PergoCleanSection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
 const Footer = lazy(() => import("@/components/Footer"));
@@ -43,6 +44,7 @@ const Index = () => {
         <BlogSection />
         <FAQSection />
         <PartnersSection />
+        <CatalogSection />
         <PergoCleanSection />
         <ContactSection />
         <Footer />
