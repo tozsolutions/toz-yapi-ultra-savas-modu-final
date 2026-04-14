@@ -84,20 +84,61 @@
       },
       "sameAs": [
         "https://www.instagram.com/toz.solutions"
-      ]
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "TOZ Yapı Ürün Kataloğu",
+        "itemListElement": [
+          {"@type": "OfferCatalog", "name": "Panjur Sistemleri", "url": "https://www.tozyapi.com.tr/#products"},
+          {"@type": "OfferCatalog", "name": "Kepenk Sistemleri", "url": "https://www.tozyapi.com.tr/#products"},
+          {"@type": "OfferCatalog", "name": "Pergola & Rolling Roof", "url": "https://www.tozyapi.com.tr/#products"},
+          {"@type": "OfferCatalog", "name": "Otomatik Kapı Sistemleri", "url": "https://www.tozyapi.com.tr/#products"},
+          {"@type": "OfferCatalog", "name": "Giyotin & Cam Sistemleri", "url": "https://www.tozyapi.com.tr/#products"},
+          {"@type": "OfferCatalog", "name": "Akıllı Cam Uygulamaları", "url": "https://www.tozyapi.com.tr/#products"}
+        ]
+      }
     }
     </script>
 
-    <!-- LocalBusiness Schema -->
+    <!-- WebSite Schema for Google Search -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "WebSite",
+      "@id": "https://www.tozyapi.com.tr/#website",
       "name": "Toz Yapı Teknolojileri",
-      "image": "https://www.tozyapi.com.tr/images/logos/tozyapi-logo.webp",
+      "url": "https://www.tozyapi.com.tr",
+      "description": "Panjur, kepenk, pergola, otomatik kapı ve akıllı yapı sistemleri üreticisi",
+      "inLanguage": "tr",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.tozyapi.com.tr/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- LocalBusiness Schema (Enhanced for GBP alignment) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "@id": "https://www.tozyapi.com.tr/#localbusiness",
+      "name": "Toz Yapı Teknolojileri",
+      "alternateName": "Toz Yapı",
+      "image": "https://www.tozyapi.com.tr/images/hero-anasayfa-optimized.webp",
+      "logo": "https://www.tozyapi.com.tr/images/logos/tozyapi-logo.webp",
       "url": "https://www.tozyapi.com.tr",
       "telephone": "+90-536-773-14-04",
       "email": "merhaba@tozyapi.com.tr",
+      "priceRange": "$$",
+      "description": "2008'den beri panjur, kepenk, pergola, otomatik kapı ve akıllı yapı sistemleri üreticisi. Ankara merkezli, Türkiye genelinde hizmet veren TSE ve CE sertifikalı yapı teknolojileri markası.",
+      "foundingDate": "2008",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "minValue": 10,
+        "maxValue": 50
+      },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Timko İş Merkezi, Çamlıca Mah. Anadolu Bulvarı, Ğ Blok, İdil Sok. V8, Kat 1",
@@ -106,16 +147,63 @@
         "postalCode": "06200",
         "addressCountry": "TR"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.9334,
+        "longitude": 32.8597
+      },
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "10:00",
-          "closes": "17:00"
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "14:00"
         }
       ],
-      "priceRange": "$$",
-      "areaServed": "Türkiye"
+      "areaServed": [
+        {"@type": "City", "name": "Ankara"},
+        {"@type": "AdministrativeArea", "name": "Çankaya, Ankara"},
+        {"@type": "AdministrativeArea", "name": "Yenimahalle, Ankara"},
+        {"@type": "AdministrativeArea", "name": "Keçiören, Ankara"},
+        {"@type": "AdministrativeArea", "name": "Etimesgut, Ankara"},
+        {"@type": "AdministrativeArea", "name": "Mamak, Ankara"},
+        {"@type": "AdministrativeArea", "name": "Altındağ, Ankara"},
+        {"@type": "AdministrativeArea", "name": "Sincan, Ankara"},
+        {"@type": "AdministrativeArea", "name": "Pursaklar, Ankara"},
+        {"@type": "AdministrativeArea", "name": "Gölbaşı, Ankara"},
+        {"@type": "Country", "name": "Türkiye"}
+      ],
+      "hasMap": "https://www.google.com/maps/place/Toz+Yapı+Teknolojileri",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "500",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "makesOffer": [
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Panjur Sistemleri"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Kepenk Sistemleri"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Pergola & Rolling Roof"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Otomatik Kapı Sistemleri"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Giyotin & Cam Sistemleri"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Akıllı Cam Uygulamaları"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Alüminyum Doğrama"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Havuz Kapama"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Kış Bahçesi"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Bariyer & Turnike Sistemleri"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Zip Perde & Rüzgar Kırıcı"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Brisoley Dış Cephe Jaluzisi"}}
+      ],
+      "sameAs": [
+        "https://www.instagram.com/toz.solutions"
+      ]
     }
     </script>
 
@@ -199,6 +287,46 @@
             "@type": "Answer",
             "text": "Evet, tüm ürünlerimiz için Revit (.rfa), IFC, DWG ve STEP formatlarında BIM dosyaları ile teknik datasheetler mevcuttur."
           }
+        }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ana Sayfa",
+          "item": "https://www.tozyapi.com.tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ürünler",
+          "item": "https://www.tozyapi.com.tr/#products"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Hakkımızda",
+          "item": "https://www.tozyapi.com.tr/#about"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Referanslar",
+          "item": "https://www.tozyapi.com.tr/#references"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "İletişim",
+          "item": "https://www.tozyapi.com.tr/#contact"
         }
       ]
     }
