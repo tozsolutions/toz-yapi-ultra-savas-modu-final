@@ -48,3 +48,7 @@ test-results
 *.tmp
 *.temp
 .cache
+dist
+.env
+.env.local
+node_modules

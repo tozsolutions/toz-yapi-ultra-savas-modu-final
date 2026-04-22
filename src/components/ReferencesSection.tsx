@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const refs = [
   { img: "/images/references/400_yatakli_sincan_egitim_arastirma_hahastanesi.webp", label: "Sincan Eğitim Araştırma Hastanesi" },
   { img: "/images/references/bayburt_devlet_hastanesi.webp", label: "Bayburt Devlet Hastanesi" },
@@ -24,11 +22,7 @@ export default function ReferencesSection() {
     <section id="references" className="toz-section bg-toz-cream">
       <div className="toz-container">
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <span className="text-[1rem] md:text-[1.08rem] text-primary font-semibold uppercase tracking-widest">
               Projelerimiz
             </span>
@@ -38,17 +32,13 @@ export default function ReferencesSection() {
             <p className="toz-subheading mx-auto mt-4">
               Tecrübemizle hayata geçirdiğimiz projelerden örnekler.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {refs.map((r, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
               className="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer product-glow-hover"
             >
               <img
@@ -56,13 +46,17 @@ export default function ReferencesSection() {
                 alt={r.label}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
+                decoding="async"
+                width="400"
+                height="300"
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
               />
               <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/30 transition-colors duration-300 flex items-end p-3">
                 <span className="text-primary-foreground text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity bg-foreground/50 backdrop-blur-sm rounded-lg px-2 py-1">
                   {r.label}
                 </span>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Shield, Building, Home, Zap, Layers, Cpu, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -22,11 +21,7 @@ export default function ProductsSection() {
     <section id="products" className="toz-section">
       <div className="toz-container">
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <span className="text-[1rem] md:text-[1.08rem] text-primary font-semibold uppercase tracking-widest">
               Ürünlerimiz
             </span>
@@ -36,17 +31,13 @@ export default function ProductsSection() {
             <p className="toz-subheading mx-auto mt-4">
               Kapsamlı ürün yelpazemizle tüm yapı projelerinde yanınızdayız.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {mainProducts.map((p, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
             >
               <Link to={`/urunler/${p.slug}`}>
                 <Card className="overflow-hidden toz-card-hover group cursor-pointer border-border h-full product-glow-hover rounded-2xl">
@@ -56,6 +47,10 @@ export default function ProductsSection() {
                       alt={p.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       loading="lazy"
+                      decoding="async"
+                      width="400"
+                      height="300"
+                      sizes="(max-width: 768px) 100vw, 400px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-1.5">
@@ -84,15 +79,12 @@ export default function ProductsSection() {
                   </CardContent>
                 </Card>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Extra product categories grid */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+        <div
           className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
         >
           {extraProducts.map((item, i) => (
@@ -103,6 +95,10 @@ export default function ProductsSection() {
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="200"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent flex items-end p-4">
                   <span className="text-primary-foreground font-semibold text-sm">{item.title}</span>
@@ -110,7 +106,7 @@ export default function ProductsSection() {
               </div>
             </Link>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

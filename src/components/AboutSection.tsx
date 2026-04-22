@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Target, Eye, Award } from "lucide-react";
 
 export default function AboutSection() {
@@ -24,11 +23,7 @@ export default function AboutSection() {
     <section id="about" className="toz-section bg-toz-cream">
       <div className="toz-container">
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <span className="text-[1rem] md:text-[1.08rem] text-primary font-semibold uppercase tracking-widest">
               Hakkımızda
             </span>
@@ -39,17 +34,13 @@ export default function AboutSection() {
               2008 yılından bu yana yapı teknolojileri sektöründe kaliteli ürünlerimiz ve
               yenilikçi çözümlerimizle müşterilerimizin yanındayız.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {items.map((item, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
               className="bg-card rounded-2xl p-8 shadow-sm toz-card-hover border border-border"
             >
               <div className="w-14 h-14 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
@@ -57,15 +48,12 @@ export default function AboutSection() {
               </div>
               <h3 className="text-xl font-bold font-display text-foreground mb-3">{item.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Advantages bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+        <div
           className="mt-16 bg-toz-gradient rounded-2xl p-8 md:p-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
         >
           {[
@@ -79,7 +67,7 @@ export default function AboutSection() {
               <div className="text-sm text-primary-foreground/70 mt-1">{s.l}</div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

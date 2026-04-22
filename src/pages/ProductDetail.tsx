@@ -3,7 +3,6 @@ import { getProductBySlug, products } from "@/data/products";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ChevronRight, Phone } from "lucide-react";
-import { motion } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
 
 export default function ProductDetail() {
@@ -29,20 +28,18 @@ export default function ProductDetail() {
     <div className="min-h-screen bg-background">
       {/* Hero */}
       <div className="relative h-[50vh] min-h-[320px] overflow-hidden">
-        <img src={heroImg} alt={product.title} className="w-full h-full object-cover" />
+        <img src={heroImg} alt={product.title} className="w-full h-full object-cover" loading="eager" fetchpriority="high" width="1600" height="600" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-8">
           <div className="toz-container">
             <Link to="/#products" className="inline-flex items-center gap-2 text-sm text-primary-foreground/70 hover:text-primary-foreground mb-4 transition-colors">
               <ArrowLeft className="w-4 h-4" /> Ürünlere Dön
             </Link>
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+            <h1
               className="text-3xl md:text-5xl font-bold text-primary-foreground font-display"
             >
               {product.title}
-            </motion.h1>
+            </h1>
           </div>
         </div>
       </div>
@@ -51,16 +48,16 @@ export default function ProductDetail() {
       <div className="toz-container py-12">
         <div className="grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 space-y-8">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
+            <div>
               <p className="text-lg text-muted-foreground leading-relaxed">{product.desc}</p>
-            </motion.div>
+            </div>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+            <div>
               <h2 className="text-2xl font-bold text-foreground font-display mb-4">Ürün Hakkında</h2>
               <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{product.details}</p>
-            </motion.div>
+            </div>
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+            <div>
               <h3 className="text-xl font-bold text-foreground font-display mb-4">Özellikler</h3>
               <div className="flex flex-wrap gap-2">
                 {product.features.map((f, i) => (
@@ -69,22 +66,22 @@ export default function ProductDetail() {
                   </Badge>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
             {/* Product gallery */}
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+            <div>
               <h3 className="text-xl font-bold text-foreground font-display mb-4">Galeri</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl overflow-hidden product-glow-hover">
-                  <img src={product.image} alt={product.title} className="w-full h-48 object-cover" loading="lazy" />
+                  <img src={product.image} alt={product.title} className="w-full h-48 object-cover" loading="lazy" width="400" height="200" />
                 </div>
                 {product.heroImage && (
                   <div className="rounded-xl overflow-hidden product-glow-hover">
-                    <img src={product.heroImage} alt={product.title} className="w-full h-48 object-cover" loading="lazy" />
+                    <img src={product.heroImage} alt={product.title} className="w-full h-48 object-cover" loading="lazy" width="400" height="200" />
                   </div>
                 )}
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Sidebar */}

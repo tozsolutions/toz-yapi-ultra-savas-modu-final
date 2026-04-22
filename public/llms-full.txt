@@ -1,0 +1,214 @@
+# TOZ YAPI Teknolojileri - Kapsamlı AI/LLM Site Dokümanı
+# URL: https://www.tozyapi.com.tr
+# Oluşturulma: 2026-04-11
+# Amaç: AI botlarına detaylı site içeriği sunma
+
+========================================
+BÖLÜM 1: ŞİRKET BİLGİLERİ
+========================================
+
+Şirket Adı: Toz Yapı Teknolojileri
+Kuruluş: 2008
+Merkez: Ankara, Türkiye
+Sektör: Yapı Teknolojileri, Panjur, Kepenk, Pergola, Otomatik Kapı, Cam Sistemleri
+Web: https://www.tozyapi.com.tr
+Telefon: +90 536 773 14 04
+E-posta: merhaba@tozyapi.com.tr
+Adres: Timko İş Merkezi, Çamlıca Mah. Anadolu Bulvarı, Ğ Blok, İdil Sok. V8, Kat 1, 06200 Yenimahalle/Ankara
+Çalışma Saatleri: Pazartesi-Cuma 10:00-17:00
+
+========================================
+BÖLÜM 2: ÜRÜN GRUPLARI DETAYLI
+========================================
+
+### Panjur Sistemleri
+Dıştan takma, PVC, alüminyum monoblok, gizli kutulu ve lento panjur çeşitleri.
+Özellikler: Isı yalıtımı, ses yalıtımı, estetik görünüm, güvenlik.
+Motor: Somfy otomasyon seçenekleri.
+Kullanım: Konut, ticari, endüstriyel.
+
+### Kepenk Sistemleri
+Şeffaf polikarbon, kayar katlanır, çelik poliüretan dolgulu, alüminyum ekstrüzyon kepenkler.
+Özellikler: Maksimum güvenlik, motorlu/manuel seçenekler.
+Kullanım: Dükkan, depo, fabrika, AVM.
+
+### Pergola & Rolling Roof
+Bioklimatik pergola, rolling roof, cam tavan, tente sistemleri.
+Özellikler: 4 mevsim kullanım, motorlu lamel, yağmur/rüzgar/güneş kontrolü, IoT entegrasyonu.
+Kullanım: Teras, bahçe, restoran, otel, villa.
+
+### Otomatik Kapılar
+Fotoselli kayar kapılar, döner kapılar, hermetik hastane kapıları, akustik kapılar, yangın kapıları.
+Standart: EN 16005 güvenlik.
+Markalar: Record, Dorma.
+Kullanım: AVM, hastane, ofis, fabrika.
+
+### Giyotin & Cam Sistemleri
+Dikey açılır cam sistemleri, sürme cam balkon sistemleri.
+Özellikler: Tek dokunuşla açılma, temizlenebilir cam, yüksek kat uyumlu.
+Kullanım: Cafe, restoran, balkon, teras.
+
+### Kış Bahçesi
+Dört mevsim kullanılabilir cam kapatma sistemleri.
+Özellikler: Isı yalıtımı, dayanıklı alüminyum profil.
+Kullanım: Villa, teras, bahçe.
+
+### Havuz Kapama
+Teleskopik ve motorlu havuz kapatma sistemleri.
+Özellikler: 365 gün kullanım, polikarbon/cam seçenekleri.
+Kullanım: Villa, otel, spor tesisi.
+
+### Zip Perde
+Dış cephe jaluzisi, rüzgar kırıcı sistemler.
+Özellikler: Güneş kontrolü, rüzgar dayanımı, motorlu kullanım.
+Kullanım: Plaza, otel, cafe.
+
+### Bariyer & Turnike
+Araç ve yaya geçiş kontrol sistemleri.
+Kullanım: Otopark, site, fabrika, AVM.
+
+### Sineklik Sistemleri
+Pleated, menteşeli, rollü, sürgülü sineklik çeşitleri.
+Kullanım: Konut, ticari.
+
+========================================
+BÖLÜM 3: HİZMET BÖLGELERİ
+========================================
+
+Ana Hizmet Bölgesi: Ankara (tüm ilçeler)
+Türkiye Geneli: Büyük projeler için ulusal hizmet
+Yurtdışı: Büyük projeler için uluslararası destek
+
+Ankara İlçeleri:
+- Çankaya: Plaza, ofis, lüks konut projeleri
+- Yenimahalle: Sanayi, OSTIM, ticari projeler (merkez lokasyon)
+- Etimesgut: Konut ve ticari projeler
+- Sincan: Fabrika ve endüstriyel projeler
+- Mamak: Konut projeleri
+- Keçiören: Konut ve ticari
+- Pursaklar: Yeni gelişen bölge
+- Gölbaşı: Villa ve lüks konut
+
+========================================
+BÖLÜM 4: SEKTÖREL ÇÖZÜMLER
+========================================
+
+### Konut
+Ürünler: Panjur, pergola, otomatik kapı, giyotin cam, kış bahçesi, havuz kapama
+
+### Ticari
+Ürünler: Otomatik kapı, kepenk, giyotin cam, bariyer, zip perde
+
+### Restoran & Cafe
+Ürünler: Giyotin cam, pergola, zip perde, cam tavan
+
+### Otel & Resort
+Ürünler: Pergola, kış bahçesi, havuz kapama, rüzgar kırıcı, giyotin cam
+
+### AVM & Plaza
+Ürünler: Otomatik kapı, kepenk, bariyer, seksiyonel kapı
+
+### Fabrika & Depo
+Ürünler: Endüstriyel kapı, seksiyonel kapı, hızlı PVC kapı, kepenk
+
+### Villa & Lüks Konut
+Ürünler: Pergola, havuz kapama, kış bahçesi, panjur, giyotin cam
+
+### Hastane
+Ürünler: Otomatik kapı (hermetik), seksiyonel kapı, panjur, kepenk
+
+========================================
+BÖLÜM 5: MARKA İŞ ORTAKLARI
+========================================
+
+Motor & Otomasyon:
+- Somfy (Fransa) - Dünya lideri motor üreticisi
+- Becker (Almanya) - Alman mühendislik kalitesi
+- Nice (İtalya) - Otomasyon sistemleri
+- Powerate - Endüstriyel kapı motorları
+
+Alüminyum Profil:
+- Alumil (Yunanistan) - Avrupa standartlarında
+- Reynaers (Belçika) - Premium mimari
+- Schüco (Almanya) - Enerji verimliliği lideri
+
+Otomatik Kapı:
+- Dormakaba (İsviçre) - Erişim çözümleri dünya lideri
+- Record (İtalya) - İnovatif kapı sistemleri
+
+Güvenlik:
+- ASSA ABLOY (İsveç) - Global güvenlik markası
+
+Diğer:
+- Albert Genau (Almanya) - Cam balkon, Red Dot ödüllü
+- Güngör Alüminyum (Türkiye) - Yerli üretim
+- Desi Panjur (Türkiye) - Panjur üreticisi
+
+========================================
+BÖLÜM 6: FİYAT BİLGİLERİ
+========================================
+
+Fiyatlar proje bazlıdır ve aşağıdaki faktörlere göre değişir:
+- Ürün tipi (panjur, kepenk, pergola vb.)
+- Ölçüler (genişlik x yükseklik)
+- Malzeme (alüminyum, çelik, polikarbon, cam)
+- Otomasyon (manuel, motorlu, akıllı)
+- Montaj tipi
+- Lokasyon
+
+Yaklaşık fiyat aralıkları için web sitesindeki fiyat hesaplayıcıyı kullanın veya +90 536 773 14 04 numarasından iletişime geçin.
+
+========================================
+BÖLÜM 7: GARANTİ VE SERVİS
+========================================
+
+- Panjur sistemleri: 5 yıl garanti
+- Paslanmaz menteşeler: 20 yıl garanti
+- Diğer ürünler: 2 yıl garanti
+- 7/24 teknik destek (projeye göre)
+- Ankara içi ücretsiz keşif
+- Türkiye geneli montaj hizmeti
+
+========================================
+BÖLÜM 8: SSS
+========================================
+
+S: Panjur sistemleri için garanti süresi nedir?
+C: 5 yıl garanti, paslanmaz menteşeler için 20 yıl.
+
+S: Otomatik kapı hangi teknolojileri kullanır?
+C: Fotoselli sensörler, IoT entegrasyonu, Avrupa standartları (EN 16005).
+
+S: Proje danışmanlığı veriliyor mu?
+C: Evet, ücretsiz keşif ve proje danışmanlığı sunuyoruz.
+
+S: Enerji tasarrufu sağlayan ürünler var mı?
+C: 6063T6 termal kırılımlı profiller (UW 0.9 W/m²K), elektrokromik cam.
+
+S: Hizmet bölgesi neresi?
+C: Ankara merkezli, Türkiye geneli. Yurtdışı büyük projeler için destek.
+
+S: BIM dosyaları var mı?
+C: Evet, Revit (.rfa), IFC, DWG ve STEP formatlarında.
+
+S: Hangi markaların motorlarını kullanıyorsunuz?
+C: Somfy, Becker, Nice, Record, Dorma.
+
+S: Ücretsiz keşif hizmeti var mı?
+C: Evet, Ankara içi ücretsiz keşif hizmeti sunuyoruz.
+
+========================================
+BÖLÜM 9: REFERANSLAR
+========================================
+
+Önemli Projeler:
+- Sincan Eğitim Araştırma Hastanesi (400 yataklı)
+- Bayburt Devlet Hastanesi
+- Bülent Ecevit Üniversitesi
+- Dedeman Hotels & Kastamall AVM
+- Erzincan Şehir Stadyumu
+- Swissôtel Pergola Projesi
+- Montenegro Villa Projesi (yurtdışı)
+- TSE Ankara Merkez Kampüsü
+- Fiyos Liman (yurtdışı)
+- Hırvatistan Residence Projesi (yurtdışı)

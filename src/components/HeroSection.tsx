@@ -1,7 +1,8 @@
-import { motion } from "framer-motion";
 import { ChevronRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Suspense, lazy } from "react";
+
+const QuickQuote = lazy(() => import("@/components/QuickQuote"));
 
 function AnimatedCounter({ target, suffix = "", duration = 2000 }: { target: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -46,9 +47,15 @@ export default function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-anasayfa.webp?v=2"
+          src="/images/hero-anasayfa-optimized.webp?v=6"
           alt="Modern yapı teknolojileri"
           className="w-full h-full object-cover brightness-110 contrast-110 saturate-110"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1600"
+          height="900"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-toz-dark-deep/75 via-toz-anthracite/65 to-primary/30" />
       </div>
@@ -65,10 +72,7 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 toz-container text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+        <div
           className="max-w-5xl mx-auto"
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[0.95] tracking-tight">
@@ -91,9 +95,10 @@ export default function HeroSection() {
               onClick={() =>
                 document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })
               }
+              aria-label="Ürünleri keşfetmek için tıkla"
             >
               Ürünleri Keşfet
-              <ChevronRight className="w-5 h-5 ml-2" />
+              <ChevronRight className="w-5 h-5 ml-2" aria-hidden="true" />
             </Button>
             <Button
               size="lg"
@@ -102,16 +107,14 @@ export default function HeroSection() {
               onClick={() =>
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
               }
+              aria-label="Teklif almak için tıkla"
             >
               Teklif Al
             </Button>
           </div>
 
           {/* Animated Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
+          <div
             className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-3xl mx-auto"
           >
             {[
@@ -125,18 +128,23 @@ export default function HeroSection() {
                 <div className="text-primary-foreground/60 text-sm mt-1">{stat.label}</div>
               </div>
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+
+          {/* Quick Quote Form */}
+          <div className="mt-12 max-w-xl mx-auto">
+            <Suspense fallback={<div className="h-20 bg-card/50 rounded-xl animate-pulse" />}>
+              <QuickQuote />
+            </Suspense>
+          </div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
+      <div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <ChevronDown className="w-8 h-8 text-primary-foreground/50" />
-      </motion.div>
+      </div>
     </section>
   );
 }

@@ -10,6 +10,18 @@ import ProductDetail from "./pages/ProductDetail.tsx";
 import BlogDetail from "./pages/BlogDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import AdminDashboard from "./pages/admin/Dashboard.tsx";
+import TeklifHesapla from "./pages/TeklifHesapla.tsx";
+import TeknikDestek from "./pages/TeknikDestek.tsx";
+import CallbackPage from "./pages/CallbackPage.tsx";
+import Katalog from "./pages/Katalog.tsx";
+import DistrictService from "./pages/DistrictService.tsx";
+import NedenBiz from "./pages/NedenBiz.tsx";
+import Garanti from "./pages/Garanti.tsx";
+import Surecimiz from "./pages/Surecimiz.tsx";
+import Projeler from "./pages/Projeler.tsx";
+import CompareSomfyBecker from "./pages/CompareSomfyBecker.tsx";
+import ComparePergolaTente from "./pages/ComparePergolaTente.tsx";
+import CompareKepenkPanjur from "./pages/CompareKepenkPanjur.tsx";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +37,18 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/urunler/:slug" element={<ProductDetail />} />
               <Route path="/blog/:slug" element={<BlogDetail />} />
+              <Route path="/teklif-hesapla" element={<TeklifHesapla />} />
+              <Route path="/teknik-destek" element={<TeknikDestek />} />
+              <Route path="/sizi-arayalim" element={<CallbackPage />} />
+              <Route path="/katalog" element={<Katalog />} />
+              <Route path="/:district/:service" element={<DistrictService />} />
+              <Route path="/neden-biz" element={<NedenBiz />} />
+              <Route path="/garanti" element={<Garanti />} />
+              <Route path="/surecimiz" element={<Surecimiz />} />
+              <Route path="/projeler" element={<Projeler />} />
+              <Route path="/karsilastirma/somfy-vs-becker" element={<CompareSomfyBecker />} />
+              <Route path="/karsilastirma/pergola-vs-tente" element={<ComparePergolaTente />} />
+              <Route path="/karsilastirma/kepenk-vs-panjur" element={<CompareKepenkPanjur />} />
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

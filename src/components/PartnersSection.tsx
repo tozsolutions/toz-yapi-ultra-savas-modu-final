@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const partnerLogos = [
   { src: "/images/logos/alumil.webp", name: "Alumil", size: "normal" },
   { src: "/images/logos/nice.webp", name: "Nice", size: "normal" },
@@ -36,18 +34,14 @@ export default function PartnersSection() {
     <section id="partners" className="toz-section bg-toz-cream overflow-hidden">
       <div className="toz-container">
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <span className="text-[1rem] md:text-[1.08rem] text-primary font-semibold uppercase tracking-widest">
               İş Ortaklarımız
             </span>
             <h2 className="toz-heading mt-3">
               Güvenilir <span className="text-gradient-purple">Çözüm Ortakları</span>
             </h2>
-          </motion.div>
+          </div>
         </div>
       </div>
 
@@ -68,7 +62,10 @@ export default function PartnersSection() {
                   src={logo.src}
                   alt={logo.name}
                   className="max-w-full max-h-full object-contain grayscale-[20%] group-hover:grayscale-0 transition-all duration-300 opacity-95 group-hover:opacity-100"
-                  loading="eager"
+                  loading="lazy"
+                  decoding="async"
+                  width="120"
+                  height="90"
                 />
               </div>
             );

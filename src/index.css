@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -22,7 +22,7 @@
     --secondary-foreground: 0 0% 100%;
 
     --muted: 260 10% 96%;
-    --muted-foreground: 240 5% 45%;
+    --muted-foreground: 240 5% 40%; /* Improved from 45% for better contrast */
 
     --accent: 265 100% 60%;
     --accent-foreground: 0 0% 100%;
@@ -83,7 +83,7 @@
     --secondary: 270 20% 40%;
     --secondary-foreground: 0 0% 100%;
     --muted: 240 6% 16%;
-    --muted-foreground: 240 5% 60%;
+    --muted-foreground: 240 5% 65%; /* Improved from 60% for dark mode */
     --accent: 270 30% 40%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
@@ -214,4 +214,13 @@ html {
 }
 .hero-cta-glow {
   animation: cta-glow 3s ease-in-out infinite;
+}
+
+/* WhatsApp float button pulse */
+@keyframes whatsapp-float-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(142 76% 36% / 0.5); }
+  50% { box-shadow: 0 0 0 12px hsl(142 76% 36% / 0); }
+}
+.whatsapp-float-pulse {
+  animation: whatsapp-float-pulse 2s infinite;
 }

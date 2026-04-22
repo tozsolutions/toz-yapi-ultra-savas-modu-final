@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -49,11 +48,7 @@ export default function StoreSection() {
     <section id="store" className="toz-section">
       <div className="toz-container">
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <span className="text-[1rem] md:text-[1.08rem] text-primary font-semibold uppercase tracking-widest">
               Online Mağaza
             </span>
@@ -63,17 +58,13 @@ export default function StoreSection() {
             <p className="toz-subheading mx-auto mt-4">
               Motor, kumanda ve yedek parça ürünlerimizi online sipariş edin.
             </p>
-          </motion.div>
+          </div>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {shopProducts.map((p, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
             >
               <Card className="toz-card-hover overflow-hidden group h-full border-border product-glow-hover rounded-2xl">
                 <div className="relative h-48 overflow-hidden">
@@ -82,6 +73,10 @@ export default function StoreSection() {
                     alt={p.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    decoding="async"
+                    width="400"
+                    height="300"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
                   <Badge className="absolute top-3 left-3 bg-destructive text-destructive-foreground">
                     {p.discount}
@@ -106,7 +101,7 @@ export default function StoreSection() {
                   </Button>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
 

@@ -1,52 +1,73 @@
-# Toz Yapı Teknolojileri
+# TOZ YAPI Teknolojileri - AI/LLM Site Haritası
+# URL: https://www.tozyapi.com.tr
+# Oluşturulma: 2026-04-11
+# Amaç: AI botlarına site içeriğini keşfettirme
 
-> Toz Yapı Teknolojileri, 2008 yılından bu yana Ankara merkezli olarak panjur, kepenk, pergola, otomatik kapı ve akıllı yapı sistemleri alanında hizmet veren bir yapı teknolojileri firmasıdır.
+## Hakkında
+Toz Yapı Teknolojileri, 2008'den beri Ankara merkezli faaliyet gösteren; panjur, kepenk, pergola, otomatik kapı, giyotin cam ve akıllı yapı sistemleri üreten bir firmadır.
 
-## Hakkımızda
-- Kuruluş: 2008
-- Merkez: Yenimahalle, Ankara, Türkiye
-- Adres: Timko İş Merkezi, Çamlıca Mah. Anadolu Bulvarı, Ğ Blok, İdil Sok. V8, Kat 1, 06200 Yenimahalle/Ankara
+## İletişim
 - Telefon: +90 536 773 14 04
 - E-posta: merhaba@tozyapi.com.tr
-- Web: https://www.tozyapi.com.tr
+- Adres: Timko İş Merkezi, Çamlıca Mah. Anadolu Bulvarı, Ğ Blok, İdil Sok. V8, Kat 1, 06200 Yenimahalle/Ankara
 - Çalışma Saatleri: Pazartesi-Cuma 10:00-17:00
 
 ## Ürün Grupları
-- Panjur Sistemleri (dıştan takma, monoblok, gizli kutulu, lento panjur)
-- Kepenk Sistemleri (şeffaf, kayar katlanır, çelik-poliüretan, alüminyum ekstrüzyon)
-- Pergola & Rolling Roof & Bioclimatic Tente (rolling roof, bioklimatik pergola, cam tavan, tente)
-- Otomatik Kapı Sistemleri (fotoselli, döner, hermetik, akustik, yangın kapıları)
-- Giyotin & Cam Sistemleri (sürme cam, giyotin cam, zip perde, rüzgar kırıcı)
-- Akıllı Cam Uygulamaları (elektrokromik cam, IoT entegrasyonu, otomasyon, akıllı ev)
-- Alüminyum-PVC-Ahşap Kapı, Pencere, Doğrama & Cephe Çözümleri
-- Bahçe & Çit Sistemleri
-- Havuz Kapama Çözümleri
-- Kış Bahçesi
-- Sundurma & Araç Parkı (Carport)
-- Turnike & Bariyer Sistemleri
-- Yerli ve İthal Sineklik Sistemleri
-- Dış Cephe Jaluzisi (Brisoley / Brise Soleil)
-- Zip Perde, Giyotin, Rüzgar Kırıcı & Sürme Sistemleri
-- Isıtma & Soğutma Sistemleri
-- Açık Hava Mutfakları
+- Panjur Sistemleri: https://www.tozyapi.com.tr/urunler/panjur-sistemleri
+- Kepenk Sistemleri: https://www.tozyapi.com.tr/urunler/kepenk-sistemleri
+- Pergola & Rolling Roof: https://www.tozyapi.com.tr/urunler/pergola-tente
+- Otomatik Kapılar: https://www.tozyapi.com.tr/urunler/otomatik-kapilar
+- Giyotin & Cam Sistemleri: https://www.tozyapi.com.tr/urunler/giyotin-cam-sistemleri
+- Akıllı Cam Uygulamaları: https://www.tozyapi.com.tr/urunler/akilli-cam
+- Alüminyum Sistemler: https://www.tozyapi.com.tr/urunler/aluminyum-sistemler
+- Bahçe Giriş Otomasyon: https://www.tozyapi.com.tr/urunler/bahce-giris-otomasyon
+- Havuz Kapama: https://www.tozyapi.com.tr/urunler/havuz-kapama
+- Kış Bahçesi: https://www.tozyapi.com.tr/urunler/kis-bahcesi
+- Sundurma & Carport: https://www.tozyapi.com.tr/urunler/sundurma
+- Bariyer & Turnike: https://www.tozyapi.com.tr/urunler/bariyer-turnike
+- Sineklik Sistemleri: https://www.tozyapi.com.tr/urunler/sineklik
+- Brisoley (Dış Cephe Jaluzisi): https://www.tozyapi.com.tr/urunler/brisoley
+- Zip Perde: https://www.tozyapi.com.tr/urunler/zip-perde
+- Rüzgar Kırıcı: https://www.tozyapi.com.tr/urunler/ruzgar-kirici
 
-## Teknik Özellikler
-- 6063T6 alüminyum termal kırılımlı profiller
-- UW 0.9 W/m²K süper yalıtım değeri
-- 250 km/s rüzgar dayanımı
-- CE Avrupa sertifikalı ürünler
-- EN 16005 güvenlik standardı uyumlu otomatik kapılar
-- BIM dosyaları: Revit (.rfa), IFC, DWG, STEP formatları
+## Hizmet Bölgeleri - Ankara
+- Ankara Panjur: https://www.tozyapi.com.tr/ankara/panjur
+- Ankara Kepenk: https://www.tozyapi.com.tr/ankara/kepenk
+- Ankara Pergola: https://www.tozyapi.com.tr/ankara/pergola
+- Ankara Otomatik Kapı: https://www.tozyapi.com.tr/ankara/otomatik-kapi
+- Ankara Giyotin Cam: https://www.tozyapi.com.tr/ankara/giyotin-cam
+- Ankara Fotoselli Kapı: https://www.tozyapi.com.tr/ankara/fotoselli-kapi
+
+## İlçeler
+- Çankaya: https://www.tozyapi.com.tr/cankaya
+- Yenimahalle: https://www.tozyapi.com.tr/yenimahalle
+- Etimesgut: https://www.tozyapi.com.tr/etimesgut
+- Sincan: https://www.tozyapi.com.tr/sincan
+- Mamak: https://www.tozyapi.com.tr/mamak
+- Keçiören: https://www.tozyapi.com.tr/kecioren
+- Pursaklar: https://www.tozyapi.com.tr/pursaklar
+- Gölbaşı: https://www.tozyapi.com.tr/golbasi
+
+## Çözüm Alanları
+- Konut Çözümleri: https://www.tozyapi.com.tr/cozumler/konut
+- Ticari Çözümler: https://www.tozyapi.com.tr/cozumler/ticari
+- Restoran & Cafe: https://www.tozyapi.com.tr/cozumler/restoran-kafe
+- Otel & Resort: https://www.tozyapi.com.tr/cozumler/otel
+- AVM & Plaza: https://www.tozyapi.com.tr/cozumler/avm
+- Fabrika & Depo: https://www.tozyapi.com.tr/cozumler/fabrika
+- Villa & Lüks Konut: https://www.tozyapi.com.tr/cozumler/villa
+- Hastane & Sağlık: https://www.tozyapi.com.tr/cozumler/hastane
 
 ## Referanslar
-Sincan Eğitim Araştırma Hastanesi, Bayburt Devlet Hastanesi, Bülent Ecevit Üniversitesi, Dedeman Hotels & Kastamall AVM, Erzincan Şehir Stadyumu, Hatay Hassa Devlet Hastanesi, TSE Ankara Merkez Kampüsü, Swissôtel, Muğla AFAD, Montenegro ve Hırvatistan projeleri
+- https://www.tozyapi.com.tr/#references
 
-## İş Ortakları
-Alumil, Nice, Somfy, Dorma, Record, Ferrini, Reynaards, STR Grup, Desi Panjur, Akseki Yapı, Albert Genau, Cuppon, Alusel, GTR, Güngör Alüminyum, Kenan Metal, Dayson, Designer, Powerate
+## SSS (Sıkça Sorulan Sorular)
+- Panjur sistemleri için garanti süresi nedir? → 5 yıl garanti, paslanmaz menteşeler için 20 yıl
+- Otomatik kapı hangi teknolojileri kullanır? → Fotoselli sensörler, IoT entegrasyonu, Avrupa standartları
+- Proje danışmanlığı veriliyor mu? → Evet, ücretsiz keşif ve proje danışmanlığı
+- Enerji tasarrufu sağlayan ürünler var mı? → 6063T6 termal kırılımlı profiller, elektrokromik cam
+- Hizmet bölgesi neresi? → Ankara merkezli, Türkiye geneli
+- BIM dosyaları var mı? → Evet, Revit, IFC, DWG formatlarında
 
-## Hizmetler
-- Ücretsiz proje danışmanlığı
-- Keşif, proje ve montaj dahil komple çözüm
-- Teknik destek ve servis hizmeti
-- Türkiye geneli ve yurtdışı projelendirme desteği
-- %25'e varan enerji tasarrufu çözümleri
+## Marka İş Ortakları
+Somfy, Becker, Alumil, Reynaers, Schüco, Dormakaba, Record, ASSA ABLOY, Nice, Powerate, Albert Genau
